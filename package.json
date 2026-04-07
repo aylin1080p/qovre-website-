@@ -1,0 +1,30 @@
+{
+  "name": "qovre-website-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aylin1080p/qovre-website-.git"
+  },
+  "keywords": [],
+  "author": "Aylin Gunes <4ylingunes@gmail.com>",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aylin1080p/qovre-website-/issues"
+  },
+  "homepage": "https://github.com/aylin1080p/qovre-website-#readme",
+  "dependencies": {
+    "framer-motion": "^12.38.0",
+    "next": "^16.2.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
