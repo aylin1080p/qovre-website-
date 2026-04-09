@@ -1,0 +1,131 @@
+{
+  "common": {
+    "brand": "Qovre",
+    "ctaPrimary": "Discuss your project",
+    "ctaSecondary": "Learn more",
+    "contactEmail": "contact@qovre.nl",
+    "infoEmail": "info@qovre.nl",
+    "whatsapp": "WhatsApp",
+    "location": "The Hague, Netherlands",
+    "languageSwitcher": "Language",
+    "loading": "Loading...",
+    "readMore": "Read more",
+    "viewAll": "View all",
+    "requestQuote": "Request a quote",
+    "startProject": "Start a project",
+    "learnMore": "Learn more",
+    "sendMessage": "Send message",
+    "submit": "Submit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "cities": "Cities",
+    "process": "Process",
+    "about": "About",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "cta": "Start a project"
+  },
+  "hero": {
+    "eyebrow": "Digital solutions for modern businesses",
+    "title": "Websites, ecommerce, SaaS, and AI systems built around real business needs",
+    "subtitle": "Qovre supports businesses in the Netherlands with scalable websites, ecommerce, custom platforms, automation, chatbots, and technical SEO/GEO.",
+    "primaryCta": "Discuss your project",
+    "secondaryCta": "Explore services",
+    "cta": "Get in touch",
+    "ctaSecondary": "View our services"
+  },
+  "counter": {
+    "years": "Years of experience",
+    "projects": "Projects completed",
+    "clients": "Satisfied clients",
+    "cities": "Dutch provinces"
+  },
+  "services": {
+    "sectionTitle": "Services",
+    "sectionSubtitle": "From business websites to AI automation and technical discoverability.",
+    "businessWebsites": "Business websites",
+    "ecommerce": "Ecommerce and webshops",
+    "saas": "SaaS and custom platforms",
+    "automation": "AI automation",
+    "chatbots": "AI chatbots",
+    "seoGeo": "SEO & GEO",
+    "maintenance": "Maintenance and updates"
+  },
+  "contact": {
+    "sectionTitle": "Get in touch",
+    "sectionSubtitle": "Briefly describe what you want to build. A suitable intake form or proposal path can follow after that.",
+    "title": "Get in touch",
+    "name": "Name",
+    "email": "Email address",
+    "company": "Company (optional)",
+    "message": "Message",
+    "send": "Send",
+    "success": "Thank you! We'll get back to you within one business day.",
+    "error": "Something went wrong. Please try again.",
+    "form": {
+      "name": "Name",
+      "company": "Company name",
+      "email": "Email address",
+      "phone": "Phone / WhatsApp",
+      "service": "Requested service",
+      "budget": "Indicative budget",
+      "deadline": "Desired timeline",
+      "message": "Describe your request",
+      "consent": "I agree to be contacted about my enquiry",
+      "submit": "Send enquiry"
+    }
+  },
+  "chat": {
+    "title": "Qovre Assistant",
+    "greeting": "Hello! How can I help you?",
+    "placeholder": "Ask a question...",
+    "limit": "Chat is temporarily unavailable. Please email contact@qovre.nl"
+  },
+  "footer": {
+    "operator": "Qovre is a digital brand operated by GetFromTR.",
+    "legalLocation": "The Hague, Netherlands",
+    "vat": "VAT",
+    "kvk": "KvK",
+    "rights": "All rights reserved."
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "subtitle": "Practical answers about pricing, timelines, technology, support, and AI solutions."
+  },
+  "intake": {
+    "website": {
+      "title": "Website request",
+      "projectType": "Website type",
+      "pageCount": "Estimated number of pages",
+      "languages": "Required languages",
+      "features": "Required features",
+      "referenceSites": "Reference websites",
+      "contentReady": "Is your content already available?"
+    },
+    "ecommerce": {
+      "title": "Ecommerce request",
+      "productCount": "Number of products",
+      "payments": "Payment methods",
+      "shipping": "Shipping requirements",
+      "inventory": "Inventory or integrations",
+      "languages": "Required languages",
+      "referenceSites": "Reference stores"
+    },
+    "custom": {
+      "title": "Custom / SaaS request",
+      "problem": "What problem needs to be solved?",
+      "users": "Who will use the system?",
+      "roles": "User roles",
+      "integrations": "Required integrations",
+      "mvp": "Would an MVP be enough for the first phase?",
+      "deadline": "Desired timeline"
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "common": {
+    "brand": "Qovre",
+    "ctaPrimary": "Project bespreken",
+    "ctaSecondary": "Meer informatie",
+    "contactEmail": "contact@qovre.nl",
+    "infoEmail": "info@qovre.nl",
+    "whatsapp": "WhatsApp",
+    "location": "Den Haag, Nederland",
+    "languageSwitcher": "Taal",
+    "loading": "Laden...",
+    "readMore": "Lees meer",
+    "viewAll": "Alles bekijken",
+    "requestQuote": "Offerte aanvragen",
+    "startProject": "Project starten",
+    "learnMore": "Meer weten",
+    "sendMessage": "Bericht versturen",
+    "submit": "Verzenden",
+    "close": "Sluiten",
+    "back": "Terug",
+    "next": "Volgende",
+    "yes": "Ja",
+    "no": "Nee"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Diensten",
+    "cities": "Steden",
+    "process": "Werkwijze",
+    "about": "Over ons",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "cta": "Project starten"
+  },
+  "hero": {
+    "eyebrow": "Digitale oplossingen voor moderne bedrijven",
+    "title": "Websites, webshops, SaaS en AI-oplossingen die bedrijfsmatig kloppen",
+    "subtitle": "Qovre helpt bedrijven in Nederland met schaalbare websites, e-commerce, maatwerkplatformen, automatisering, chatbots en technische SEO/GEO.",
+    "primaryCta": "Bespreek uw project",
+    "secondaryCta": "Bekijk diensten",
+    "cta": "Neem contact op",
+    "ctaSecondary": "Bekijk onze diensten"
+  },
+  "counter": {
+    "years": "Jaar ervaring",
+    "projects": "Afgeronde projecten",
+    "clients": "Tevreden klanten",
+    "cities": "Nederlandse provincies"
+  },
+  "services": {
+    "sectionTitle": "Diensten",
+    "sectionSubtitle": "Van zakelijke websites tot AI-automatisering en technische vindbaarheid.",
+    "businessWebsites": "Zakelijke websites",
+    "ecommerce": "Webshops en e-commerce",
+    "saas": "SaaS en maatwerkplatformen",
+    "automation": "AI automation",
+    "chatbots": "AI chatbots",
+    "seoGeo": "SEO & GEO",
+    "maintenance": "Onderhoud en updates"
+  },
+  "contact": {
+    "sectionTitle": "Contact opnemen",
+    "sectionSubtitle": "Vertel kort wat u wilt laten ontwikkelen. Daarna kan een passend intakeformulier of voorsteltraject volgen.",
+    "title": "Neem contact op",
+    "name": "Naam",
+    "email": "E-mailadres",
+    "company": "Bedrijf (optioneel)",
+    "message": "Bericht",
+    "send": "Versturen",
+    "success": "Bedankt! We nemen binnen 1 werkdag contact op.",
+    "error": "Er is iets misgegaan. Probeer het opnieuw.",
+    "form": {
+      "name": "Naam",
+      "company": "Bedrijfsnaam",
+      "email": "E-mailadres",
+      "phone": "Telefoon / WhatsApp",
+      "service": "Gewenste dienst",
+      "budget": "Indicatief budget",
+      "deadline": "Gewenste planning",
+      "message": "Omschrijf uw aanvraag",
+      "consent": "Ik ga akkoord met contact over mijn aanvraag",
+      "submit": "Aanvraag verzenden"
+    }
+  },
+  "chat": {
+    "title": "Qovre Assistent",
+    "greeting": "Goedag! Hoe kan ik u helpen?",
+    "placeholder": "Stel een vraag...",
+    "limit": "De chat is tijdelijk niet beschikbaar. Neem contact op via contact@qovre.nl"
+  },
+  "footer": {
+    "operator": "Qovre is een digitaal merk dat wordt geëxploiteerd door GetFromTR.",
+    "legalLocation": "Den Haag, Nederland",
+    "vat": "BTW",
+    "kvk": "KvK",
+    "rights": "Alle rechten voorbehouden."
+  },
+  "faq": {
+    "title": "Veelgestelde vragen",
+    "subtitle": "Praktische antwoorden over prijzen, planning, techniek, support en AI-oplossingen."
+  },
+  "intake": {
+    "website": {
+      "title": "Website aanvraag",
+      "projectType": "Type website",
+      "pageCount": "Geschat aantal pagina’s",
+      "languages": "Gewenste talen",
+      "features": "Benodigde functies",
+      "referenceSites": "Voorbeeldwebsites",
+      "contentReady": "Is de content al beschikbaar?"
+    },
+    "ecommerce": {
+      "title": "Webshop aanvraag",
+      "productCount": "Aantal producten",
+      "payments": "Betaalmethoden",
+      "shipping": "Verzendwensen",
+      "inventory": "Voorraad of koppelingen",
+      "languages": "Gewenste talen",
+      "referenceSites": "Voorbeeldshops"
+    },
+    "custom": {
+      "title": "Maatwerk / SaaS aanvraag",
+      "problem": "Welk probleem moet worden opgelost?",
+      "users": "Wie gebruikt het systeem?",
+      "roles": "Gebruikersrollen",
+      "integrations": "Gewenste koppelingen",
+      "mvp": "Is een MVP voldoende als eerste fase?",
+      "deadline": "Gewenste planning"
+    }
+  }
+}
