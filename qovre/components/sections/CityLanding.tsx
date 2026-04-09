@@ -26,7 +26,7 @@ export default function CityLanding({ citySlug, locale }: CityLandingProps) {
   const signals = locale === 'nl' ? cityData.localSignalsNL : cityData.localSignalsEN
 
   return (
-    <article className="pt-32 pb-24 px-4 overflow-x-hidden">
+    <article className="pt-32 pb-24 px-4 overflow-x-hidden bg-[#060608] min-h-screen">
       <div className="container max-w-4xl mx-auto">
         <motion.div
           variants={fadeUp}

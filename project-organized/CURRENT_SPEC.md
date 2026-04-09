@@ -91,23 +91,36 @@ If the visual reference suggests unsupported sections, convert them into real Qo
 
 ## Current implementation status
 
-Already in place:
+Completed (as of 2026-04-09):
 
 - build passes
-- dynamic service pages
-- dynamic city pages
+- dynamic service pages (`/[locale]/[service]`)
+- dynamic city pages (`software-ontwikkeling-[city]`, `software-development-[city]`)
 - chat assistant
 - admin area
-- legal PDFs in public assets
+- legal PDFs in public assets — all 6 linked in footer
 - consolidated project structure
+- dark premium globals, nav, footer, hero (visual baseline)
+- ContactForm restyled (dark inputs, grid layout, loading states)
+- ContactSection (homepage) + contact page (two-column with trust block)
+- TrustBar section (capability pillars + nationwide coverage)
+- Process section with translations (nl/en namespace added)
+- ServicesGrid link bug fixed (`/[locale]/${slug}`)
+- `/services`, `/diensten` pages: seo.ts driven, properly styled
+- `/about`, `/over-ons`: brand positioning + differentiators
+- `/process`, `/werkwijze`: reuse Process section
+- `/industries`, `/sectoren`: minimal dark placeholder
+- llms.txt: service URLs corrected to match actual seo.ts slugs
+- sitemap.ts: removed non-existent blog/insights URLs
+- Homepage and core pages: `generateMetadata` added
+- Root layout: title template + canonical description
 
-Still needs structured refinement:
+Still needed:
 
-- full visual polish against `mainlook.png`
-- public legal/policy discoverability in UI
-- metadata and public-facts cross-check
-- route/link validation across locale and dynamic pages
-- final consistency review of business facts in UI copy
+- Operational smoke checks (contact form, chat widget, admin login)
+- Mobile nav (hamburger) — Nav is desktop-only currently
+- CityLanding page visual check — may need dark background fix
+- Content consistency spot-check on city pages and service detail copy
 
 ## Required reading order before more coding
 
@@ -133,34 +146,22 @@ Still needs structured refinement:
 
 ## Next coding order
 
-1. Visual polish
-   - refine globals, nav, footer, hero, cards, CTA rhythm
-   - stay faithful to the atmosphere of `mainlook.png`
-   - do not introduce unsupported content sections
+1. Mobile navigation
+   - Nav is currently desktop-only (`hidden md:flex`)
+   - Add hamburger menu for mobile (drawer or dropdown)
 
-2. Legal and policy integration
-   - make legal assets clearly reachable from public UI
-   - confirm footer and contact-related surfaces expose the right links
+2. CityLanding visual check
+   - Confirm `CityLanding.tsx` has dark background and proper styling
+   - Verify city page metadata is generated correctly
 
-3. Content consistency pass
-   - verify homepage, services, service detail, city pages, about, process, industries, contact
-   - keep all copy aligned with `qovre/data/seo.ts`
-
-4. Route and link validation
-   - validate locale routing
-   - validate service links
-   - validate city links
-   - validate footer/nav links
-
-5. Metadata and public facts validation
-   - check `llms.txt`
-   - check sitemap and robots
-   - check page metadata against canonical facts
-
-6. Operational smoke checks
-   - contact form
-   - chat widget
+3. Operational smoke checks
+   - contact form end-to-end
+   - chat widget (rate limiting + AI response)
    - admin login/dashboard
+
+4. Final content consistency pass
+   - spot-check service detail pages for pricing language and brand compliance
+   - verify no `Veloq`, `hello@qovre.nl`, founding year, or low-ticket pricing remains in any rendered output
 
 ## Definition of done for the next phase
 
