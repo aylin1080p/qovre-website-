@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Qovre",
-  description: "Slimme software voor ambitieuze bedrijven",
+  title: {
+    default: "Qovre",
+    template: "%s | Qovre",
+  },
+  description: "Websites, webshops, SaaS en AI-oplossingen voor bedrijven in Nederland. Gebaseerd in Den Haag, actief door heel Nederland.",
+  metadataBase: new URL("https://www.qovre.nl"),
 };
 
 export default function RootLayout({

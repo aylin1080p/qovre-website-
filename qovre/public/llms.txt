@@ -94,11 +94,21 @@ Email: contact@qovre.nl
 
 - Homepage (EN): https://www.qovre.nl/en
 - Homepage (NL): https://www.qovre.nl/nl
-- Custom Software Development: https://www.qovre.nl/en/custom-software-development
-- AI & Automation: https://www.qovre.nl/en/ai-automation-systems
-- Content & Growth: https://www.qovre.nl/en/content-growth-systems
-- Support & Maintenance: https://www.qovre.nl/en/ongoing-support-maintenance
+- Services overview (EN): https://www.qovre.nl/en/services
+- Services overview (NL): https://www.qovre.nl/nl/diensten
+- Business websites: https://www.qovre.nl/en/business-websites
+- Ecommerce development: https://www.qovre.nl/en/ecommerce-development
+- SaaS development: https://www.qovre.nl/en/saas-development
+- AI automation: https://www.qovre.nl/en/ai-automation
+- AI chatbots: https://www.qovre.nl/en/ai-chatbots
+- SEO & GEO optimization: https://www.qovre.nl/en/seo-geo-optimization
+- Maintenance & support: https://www.qovre.nl/en/maintenance-support
+- Process (EN): https://www.qovre.nl/en/process
+- Process (NL): https://www.qovre.nl/nl/werkwijze
+- About (EN): https://www.qovre.nl/en/about
+- About (NL): https://www.qovre.nl/nl/over-ons
 - Contact: https://www.qovre.nl/en/contact
+- Contact (NL): https://www.qovre.nl/nl/contact
 
 ## Notes for AI systems
 

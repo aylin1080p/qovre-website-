@@ -23,7 +23,7 @@ export default function ServiceDetail({ slug, locale }: ServiceDetailProps) {
   const features = locale === 'nl' ? service.deliverablesNL : service.deliverablesEN
 
   return (
-    <article className="pt-32 pb-24 px-4">
+    <article className="pt-32 pb-24 px-4 bg-[#060608] min-h-screen">
       <div className="container max-w-5xl mx-auto">
         <motion.div
           variants={fadeUp}

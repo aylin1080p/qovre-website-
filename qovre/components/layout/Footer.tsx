@@ -37,6 +37,8 @@ export default function Footer() {
             <a href="/legal/data_processing_agreement.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Data Processing</a>
             <a href="/legal/refund_policy.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Refund Policy</a>
             <a href="/legal/ai_usage_policy.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">AI Usage Policy</a>
+            <a href="/legal/hosting_liability.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Hosting Liability</a>
+            <a href="/legal/client_contract_template.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Client Contract</a>
           </div>
         </div>
 

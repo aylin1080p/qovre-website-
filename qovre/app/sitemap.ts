@@ -59,11 +59,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]);
 
-  // Blog/Insights — static for now, extend with CMS later
-  const blogPages: MetadataRoute.Sitemap = [
-    { url: `${BRAND.websiteUrl}/en/insights`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
-    { url: `${BRAND.websiteUrl}/nl/inzichten`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
-  ];
-
-  return [...core, ...servicePages, ...cityPages, ...blogPages];
+  return [...core, ...servicePages, ...cityPages];
 }
