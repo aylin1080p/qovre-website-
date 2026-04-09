@@ -1,8 +1,10 @@
 'use client'
 
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 import { useTranslations, useLocale } from 'next-intl'
 import { z } from 'zod'
+import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
 
 const schema = z.object({
   name: z.string().min(1, 'required').max(100),
@@ -13,6 +15,11 @@ const schema = z.object({
 
 type FormData = z.infer<typeof schema>
 type FormErrors = Partial<Record<keyof FormData, string>>
+
+const inputClass =
+  'w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder-neutral-600 text-sm focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-colors'
+
+const labelClass = 'block text-xs font-medium tracking-wide text-neutral-400 uppercase mb-2'
 
 export default function ContactForm() {
   const t = useTranslations('contact')
@@ -63,11 +70,32 @@ export default function ContactForm() {
   }
 
   if (status === 'success') {
-    return <p>{t('success')}</p>
+    return (
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        animate="visible"
+        className="py-12 px-8 rounded-2xl bg-neutral-900/50 border border-neutral-800 text-center"
+      >
+        <div className="w-12 h-12 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center justify-center mx-auto mb-4">
+          <svg className="w-5 h-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <p className="text-white font-medium">{t('success')}</p>
+      </motion.div>
+    )
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-4 max-w-lg">
+    <motion.form
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-5"
+    >
       {/* Honeypot — hidden from users */}
       <input
         type="text"
@@ -78,57 +106,85 @@ export default function ContactForm() {
         aria-hidden="true"
       />
 
-      <div className="flex flex-col gap-1">
-        <label htmlFor="name">{t('name')}</label>
-        <input
-          id="name"
-          type="text"
-          value={form.name}
-          onChange={(e) => setForm({ ...form, name: e.target.value })}
-          required
-        />
-        {errors.name && <span>{errors.name}</span>}
-      </div>
+      <motion.div variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label htmlFor="name" className={labelClass}>{t('name')}</label>
+          <input
+            id="name"
+            type="text"
+            value={form.name}
+            onChange={(e) => setForm({ ...form, name: e.target.value })}
+            placeholder="Jan de Vries"
+            required
+            className={inputClass}
+          />
+          {errors.name && <p className="mt-1 text-xs text-red-400">{errors.name}</p>}
+        </div>
 
-      <div className="flex flex-col gap-1">
-        <label htmlFor="email">{t('email')}</label>
-        <input
-          id="email"
-          type="email"
-          value={form.email}
-          onChange={(e) => setForm({ ...form, email: e.target.value })}
-          required
-        />
-        {errors.email && <span>{errors.email}</span>}
-      </div>
+        <div>
+          <label htmlFor="email" className={labelClass}>{t('email')}</label>
+          <input
+            id="email"
+            type="email"
+            value={form.email}
+            onChange={(e) => setForm({ ...form, email: e.target.value })}
+            placeholder="jan@bedrijf.nl"
+            required
+            className={inputClass}
+          />
+          {errors.email && <p className="mt-1 text-xs text-red-400">{errors.email}</p>}
+        </div>
+      </motion.div>
 
-      <div className="flex flex-col gap-1">
-        <label htmlFor="company">{t('company')}</label>
+      <motion.div variants={fadeUp}>
+        <label htmlFor="company" className={labelClass}>{t('company')}</label>
         <input
           id="company"
           type="text"
           value={form.company ?? ''}
           onChange={(e) => setForm({ ...form, company: e.target.value })}
+          placeholder={locale === 'nl' ? 'Bedrijfsnaam (optioneel)' : 'Company name (optional)'}
+          className={inputClass}
         />
-      </div>
+      </motion.div>
 
-      <div className="flex flex-col gap-1">
-        <label htmlFor="message">{t('message')}</label>
+      <motion.div variants={fadeUp}>
+        <label htmlFor="message" className={labelClass}>{t('message')}</label>
         <textarea
           id="message"
           rows={5}
           value={form.message}
           onChange={(e) => setForm({ ...form, message: e.target.value })}
+          placeholder={locale === 'nl' ? 'Omschrijf uw project of vraagstuk...' : 'Describe your project or question...'}
           required
+          className={`${inputClass} resize-none`}
         />
-        {errors.message && <span>{errors.message}</span>}
-      </div>
+        {errors.message && <p className="mt-1 text-xs text-red-400">{errors.message}</p>}
+      </motion.div>
 
-      {status === 'error' && <p>{t('error')}</p>}
+      {status === 'error' && (
+        <motion.p variants={fadeUp} className="text-sm text-red-400 bg-red-500/5 border border-red-500/20 rounded-xl px-4 py-3">
+          {t('error')}
+        </motion.p>
+      )}
 
-      <button type="submit" disabled={status === 'loading'}>
-        {status === 'loading' ? '...' : t('send')}
-      </button>
-    </form>
+      <motion.div variants={fadeUp}>
+        <button
+          type="submit"
+          disabled={status === 'loading'}
+          className="w-full sm:w-auto px-8 py-4 bg-white text-black font-semibold text-sm rounded-full hover:bg-neutral-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+        >
+          {status === 'loading' ? (
+            <span className="flex items-center gap-2">
+              <svg className="w-4 h-4 animate-spin" viewBox="0 0 24 24" fill="none">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+              </svg>
+              {locale === 'nl' ? 'Verzenden...' : 'Sending...'}
+            </span>
+          ) : t('send')}
+        </button>
+      </motion.div>
+    </motion.form>
   )
 }

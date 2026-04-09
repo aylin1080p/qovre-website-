@@ -56,7 +56,34 @@
     "automation": "AI automation",
     "chatbots": "AI chatbots",
     "seoGeo": "SEO & GEO",
-    "maintenance": "Maintenance and updates"
+    "maintenance": "Maintenance and updates",
+    "learnMore": "Learn more"
+  },
+  "process": {
+    "sectionTitle": "How we work",
+    "sectionSubtitle": "From first conversation to live environment — transparent, step by step.",
+    "steps": {
+      "discovery": {
+        "title": "Intake",
+        "description": "We map your situation, goals, and constraints. No assumptions, just sharp questions."
+      },
+      "strategy": {
+        "title": "Strategy",
+        "description": "Based on the intake, we determine approach, architecture, and scope. You see exactly what will be built."
+      },
+      "development": {
+        "title": "Build",
+        "description": "We build in sprints with incremental delivery. You follow progress and give feedback where needed."
+      },
+      "launch": {
+        "title": "Delivery",
+        "description": "Thorough testing, handover, and go-live. Including technical documentation and onboarding."
+      },
+      "growth": {
+        "title": "Continuity",
+        "description": "Maintenance, further development, and support when needed. No forced contracts."
+      }
+    }
   },
   "contact": {
     "sectionTitle": "Get in touch",

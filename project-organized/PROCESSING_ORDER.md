@@ -58,10 +58,13 @@ This file defines the current working order for the Qovre cleanup and build-out.
 
 ## Current Priority
 
+The active app build has been stabilized.
+
 The next practical step is:
 
-- `qovre/` build stabilization
+- continue from the current coding spec in `project-organized/CURRENT_SPEC.md`
 
 Reason:
 
-- The active app currently contains new UI components and routes, but build validity must come before any deeper consolidation or styling pass.
+- the workspace is now organized around a single active application
+- the next phase is refinement, integration, and spec-driven continuation

@@ -53,7 +53,7 @@ export default function ServicesGrid({ locale }: { locale: string }) {
               </div>
 
               <Link
-                href={`/${locale}/${locale === 'nl' ? 'diensten' : 'services'}/${service.slug}`}
+                href={`/${locale}/${service.slug}`}
                 className="inline-flex items-center text-sm font-semibold text-white group-hover:gap-2 transition-all"
               >
                 {t('learnMore')}

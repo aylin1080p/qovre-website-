@@ -56,7 +56,34 @@
     "automation": "AI automation",
     "chatbots": "AI chatbots",
     "seoGeo": "SEO & GEO",
-    "maintenance": "Onderhoud en updates"
+    "maintenance": "Onderhoud en updates",
+    "learnMore": "Meer informatie"
+  },
+  "process": {
+    "sectionTitle": "Werkwijze",
+    "sectionSubtitle": "Van eerste gesprek tot live omgeving — helder, stap voor stap.",
+    "steps": {
+      "discovery": {
+        "title": "Intake",
+        "description": "We brengen uw situatie, doelen en randvoorwaarden in kaart. Geen aannames, wel scherpe vragen."
+      },
+      "strategy": {
+        "title": "Strategie",
+        "description": "Op basis van de intake bepalen we aanpak, architectuur en scope. U ziet precies wat er gebouwd wordt."
+      },
+      "development": {
+        "title": "Realisatie",
+        "description": "Bouwen in sprints, met tussentijdse oplevering. U volgt de voortgang en geeft feedback waar nodig."
+      },
+      "launch": {
+        "title": "Oplevering",
+        "description": "Uitgebreid testen, overdracht en live-zetting. Inclusief technische documentatie en instructie."
+      },
+      "growth": {
+        "title": "Continuïteit",
+        "description": "Onderhoud, doorontwikkeling en support wanneer dat nodig is. Geen gedwongen contracten."
+      }
+    }
   },
   "contact": {
     "sectionTitle": "Contact opnemen",
