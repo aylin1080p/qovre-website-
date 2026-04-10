@@ -142,15 +142,32 @@ All phases complete as of 2026-04-09:
 18. `qovre/public/llms.txt`
 19. `qovre/public/legal/`
 
+## SEO schema phase (completed 2026-04-10)
+
+- Organization + LocalBusiness JSON-LD in root layout (all pages)
+- WebSite JSON-LD on homepage
+- Service JSON-LD on all service detail pages
+- FAQPage JSON-LD on /nl/veelgestelde-vragen and /en/faq
+- LocalBusiness JSON-LD on all city landing pages
+- hreflang alternateLocale added to all major page pairs
+- OG default image via /opengraph-image.tsx (edge runtime, 1200×630)
+- FAQ pages built (20 items, accordion, CTA)
+- Industries + Sectoren pages built (5 real sector cards with service links)
+- Nav: FAQ link added
+- Footer: FAQ + Industries/Sectoren links added
+- llms.txt: full rewrite with correct slugs, all new pages, GEO positioning
+- FAQ homepage section: shows first 8 items + "view all" link
+
 ## Next coding order
 
-All items in the initial spec have been completed. Potential next improvements:
+All current spec phases complete. Potential next work:
 
-1. Industries/Sectoren pages — currently minimal placeholder; could be built out with real industry verticals
-2. Blog/Insights section — sitemap URLs removed because no pages exist; could be added
-3. E2E smoke test in staging (real contact form submission, chat widget flow)
-4. Performance audit (Core Web Vitals baseline)
-5. Analytics integration (if needed)
+1. E2E smoke test in staging (contact form, chat widget, admin login)
+2. Blog/Insights section (no pages yet — sitemap URLs removed)
+3. Performance audit (Core Web Vitals, Lighthouse)
+4. Analytics integration
+5. ServiceDetail CTA copy — currently generic "Klaar om te automatiseren?"
+   for all services; could be per-service
 
 ## Definition of done for the next phase
 
