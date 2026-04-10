@@ -19,7 +19,7 @@ const sectoren = [
       'Advocaten, accountants, consultants en zelfstandigen die een betrouwbare online aanwezigheid nodig hebben om vertrouwen op te bouwen en aanvragen te genereren. Snelle oplevering, heldere structuur, sterke conversieopbouw.',
     diensten: [
       { label: 'Zakelijke websites op maat', href: '/nl/business-websites' },
-      { label: 'SEO & vindbaarheid', href: '/nl/visibility-seo-geo' },
+      { label: 'SEO & GEO', href: '/nl/seo-geo-optimization' },
     ],
   },
   {
@@ -28,7 +28,7 @@ const sectoren = [
       'Merken en retailers die online verkopen en een schaalbare, conversiegerichte webshop nodig hebben met een sterke productarchitectuur, betaalintegraties en goede beheerbaarheid.',
     diensten: [
       { label: 'Webshop ontwikkeling', href: '/nl/ecommerce-development' },
-      { label: 'Doorlopend onderhoud', href: '/nl/ongoing-support' },
+      { label: 'Doorlopend onderhoud', href: '/nl/maintenance-support' },
     ],
   },
   {
@@ -36,7 +36,7 @@ const sectoren = [
     description:
       'Scale-ups en productteams die een maatwerk SaaS-backbone, API-laag of intern tool nodig hebben — gebouwd voor performance, multi-tenancy en langdurig eigenaarschap.',
     diensten: [
-      { label: 'SaaS & maatwerkplatformen', href: '/nl/saas-custom-software' },
+      { label: 'SaaS-ontwikkeling', href: '/nl/saas-development' },
       { label: 'AI & automatisering', href: '/nl/ai-automation' },
     ],
   },
@@ -46,7 +46,7 @@ const sectoren = [
       'Medische praktijken, therapeuten en zorgverleners die een professionele website nodig hebben met heldere intakeflows, AVG-conforme formulieren en optioneel een AI-intakeassistent.',
     diensten: [
       { label: 'Zakelijke websites op maat', href: '/nl/business-websites' },
-      { label: 'AI chatbot & assistent', href: '/nl/ai-chatbot-assistant' },
+      { label: 'AI chatbots', href: '/nl/ai-chatbots' },
     ],
   },
   {
@@ -54,8 +54,8 @@ const sectoren = [
     description:
       'Bedrijven die investeren in langdurige vindbaarheid via technische SEO, GEO, structured data, city landing pages, FAQ-architectuur en machineleesbare content.',
     diensten: [
-      { label: 'SEO & vindbaarheid', href: '/nl/visibility-seo-geo' },
-      { label: 'Content & groei', href: '/nl/content-growth' },
+      { label: 'SEO & GEO', href: '/nl/seo-geo-optimization' },
+      { label: 'Doorlopend onderhoud', href: '/nl/maintenance-support' },
     ],
   },
 ]

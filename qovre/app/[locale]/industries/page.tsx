@@ -19,7 +19,7 @@ const sectors = [
       'Law firms, accountants, consultants, and independent professionals that need a reliable online presence to build credibility and generate enquiries. Fast delivery, clear structure, strong conversion path.',
     services: [
       { label: 'Business websites', href: '/en/business-websites' },
-      { label: 'SEO & visibility', href: '/en/visibility-seo-geo' },
+      { label: 'SEO & GEO', href: '/en/seo-geo-optimization' },
     ],
   },
   {
@@ -28,7 +28,7 @@ const sectors = [
       'Brands and retailers that sell online and need a scalable, conversion-focused webshop with solid product architecture, payment integrations, and maintainability.',
     services: [
       { label: 'Ecommerce development', href: '/en/ecommerce-development' },
-      { label: 'Ongoing support', href: '/en/ongoing-support' },
+      { label: 'Ongoing support', href: '/en/maintenance-support' },
     ],
   },
   {
@@ -36,7 +36,7 @@ const sectors = [
     description:
       'Scale-ups and product teams that need a custom SaaS backbone, API layer, or internal tool — built for performance, multi-tenancy, and long-term ownership.',
     services: [
-      { label: 'SaaS & custom software', href: '/en/saas-custom-software' },
+      { label: 'SaaS development', href: '/en/saas-development' },
       { label: 'AI & automation', href: '/en/ai-automation' },
     ],
   },
@@ -46,7 +46,7 @@ const sectors = [
       'Medical practices, therapists, and care providers who need a professional website with clear intake flows, GDPR-compliant forms, and optionally an AI intake assistant.',
     services: [
       { label: 'Business websites', href: '/en/business-websites' },
-      { label: 'AI chatbot & assistant', href: '/en/ai-chatbot-assistant' },
+      { label: 'AI chatbots', href: '/en/ai-chatbots' },
     ],
   },
   {
@@ -54,8 +54,8 @@ const sectors = [
     description:
       'Companies investing in long-term discoverability through technical SEO, GEO, structured data, city landing pages, FAQ architecture, and machine-readable content.',
     services: [
-      { label: 'SEO & visibility', href: '/en/visibility-seo-geo' },
-      { label: 'Content & growth', href: '/en/content-growth' },
+      { label: 'SEO & GEO', href: '/en/seo-geo-optimization' },
+      { label: 'Ongoing support', href: '/en/maintenance-support' },
     ],
   },
 ]

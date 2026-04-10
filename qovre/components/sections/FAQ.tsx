@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { FAQ as FAQ_DATA } from '@/data/seo'
@@ -29,7 +30,7 @@ export default function FAQ({ locale }: { locale: string }) {
         </motion.div>
 
         <div className="flex flex-col gap-4">
-          {FAQ_DATA.map((item) => (
+          {FAQ_DATA.slice(0, 8).map((item) => (
             <div
               key={item.id}
               className="border border-neutral-800 rounded-2xl overflow-hidden bg-neutral-900/30"
@@ -63,6 +64,22 @@ export default function FAQ({ locale }: { locale: string }) {
             </div>
           ))}
         </div>
+
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+          className="mt-10 text-center"
+        >
+          <Link
+            href={locale === 'nl' ? '/nl/veelgestelde-vragen' : '/en/faq'}
+            className="inline-flex items-center gap-2 text-sm font-medium text-neutral-400 hover:text-white border border-neutral-800 hover:border-neutral-700 px-5 py-2.5 rounded-full transition-all"
+          >
+            {locale === 'nl' ? 'Bekijk alle vragen' : 'View all questions'}
+            <span>→</span>
+          </Link>
+        </motion.div>
       </div>
     </section>
   )
