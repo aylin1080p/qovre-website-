@@ -21,3 +21,10 @@ export const chatRateLimit = new Ratelimit({
   limiter: Ratelimit.slidingWindow(10, '1 m'),
   prefix: 'rl:chat',
 })
+
+// Onboarding form: max 5 requests per 10 minutes per IP
+export const onboardingRateLimit = new Ratelimit({
+  redis: makeRedis(),
+  limiter: Ratelimit.slidingWindow(5, '10 m'),
+  prefix: 'rl:onboarding',
+})
