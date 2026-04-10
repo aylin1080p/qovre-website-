@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { BRAND, SERVICES, CITIES } from "@/data/seo";
+import { BLOG_POSTS } from "@/data/blog";
 
 // ---------------------------------------------------------------
 // Dynamic sitemap — covers every indexable URL on the site
@@ -17,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BRAND.websiteUrl}/en/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.9 },
     { url: `${BRAND.websiteUrl}/en/about`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BRAND.websiteUrl}/en/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BRAND.websiteUrl}/en/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     // Dutch core
     { url: `${BRAND.websiteUrl}/nl`, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
     { url: `${BRAND.websiteUrl}/nl/diensten`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
@@ -25,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BRAND.websiteUrl}/nl/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.9 },
     { url: `${BRAND.websiteUrl}/nl/over-ons`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BRAND.websiteUrl}/nl/veelgestelde-vragen`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BRAND.websiteUrl}/nl/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
   ];
 
   // Service pages — EN + NL
@@ -61,5 +64,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]);
 
-  return [...core, ...servicePages, ...cityPages];
+  // Blog posts — EN + NL
+  const blogPages: MetadataRoute.Sitemap = BLOG_POSTS.flatMap((post) => [
+    {
+      url: `${BRAND.websiteUrl}/en/blog/${post.slug}`,
+      lastModified: new Date(post.publishedAt),
+      changeFrequency: "yearly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${BRAND.websiteUrl}/nl/blog/${post.slug}`,
+      lastModified: new Date(post.publishedAt),
+      changeFrequency: "yearly" as const,
+      priority: 0.7,
+    },
+  ]);
+
+  return [...core, ...servicePages, ...cityPages, ...blogPages];
 }

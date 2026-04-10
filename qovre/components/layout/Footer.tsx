@@ -23,6 +23,7 @@ export default function Footer() {
             <Link href="/nl/contact" className="hover:text-white transition-colors">Contact</Link>
             <Link href="/nl/sectoren" className="hover:text-white transition-colors">Sectoren</Link>
             <Link href="/nl/veelgestelde-vragen" className="hover:text-white transition-colors">Veelgestelde vragen</Link>
+            <Link href="/nl/blog" className="hover:text-white transition-colors">Blog</Link>
           </div>
 
           <div className="flex flex-col gap-2">
@@ -33,6 +34,7 @@ export default function Footer() {
             <Link href="/en/contact" className="hover:text-white transition-colors">Contact</Link>
             <Link href="/en/industries" className="hover:text-white transition-colors">Industries</Link>
             <Link href="/en/faq" className="hover:text-white transition-colors">FAQ</Link>
+            <Link href="/en/blog" className="hover:text-white transition-colors">Blog</Link>
           </div>
 
           <div className="flex flex-col gap-2">
