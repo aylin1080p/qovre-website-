@@ -438,14 +438,15 @@ function SuccessScreen({ locale }: { locale: string }) {
       </h2>
       <p className="text-neutral-400 text-sm leading-relaxed max-w-sm mx-auto">
         {isNL
-          ? 'Bedankt voor uw aanvraag. Wij nemen binnen 24 uur contact met u op.'
-          : 'Thank you for your request. We will get back to you within 24 hours.'}
+          ? 'Bedankt voor uw aanvraag. Wij nemen binnen 24 uur contact met u op via het opgegeven e-mailadres.'
+          : 'Thank you for your request. We will get back to you within 24 hours at the email address you provided.'}
       </p>
-      <p className="text-xs text-neutral-600 mt-4">
-        {isNL
-          ? 'U ontvangt een bevestiging op het opgegeven e-mailadres.'
-          : 'You will receive a confirmation at the email address provided.'}
-      </p>
+      <a
+        href={`/${locale}`}
+        className="inline-block mt-8 px-6 py-2.5 border border-neutral-800 text-neutral-400 text-sm font-medium rounded-full hover:border-neutral-700 hover:text-white transition-colors"
+      >
+        {isNL ? '← Terug naar home' : '← Back to home'}
+      </a>
     </motion.div>
   )
 }
