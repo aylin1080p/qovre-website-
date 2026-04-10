@@ -49,30 +49,45 @@ export default function AdminLoginForm() {
     }
   }
 
+  const inputClass = 'w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-white placeholder-neutral-600 text-sm focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/20 transition-colors'
+  const labelClass = 'block text-xs font-medium tracking-wide text-neutral-400 uppercase mb-2'
+
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-4 max-w-sm">
-      <div className="flex flex-col gap-1">
-        <label htmlFor="email">Email</label>
+    <form onSubmit={handleSubmit} className="flex flex-col gap-5 p-8 rounded-2xl bg-neutral-900/50 border border-neutral-800">
+      <div>
+        <label htmlFor="email" className={labelClass}>Email</label>
         <input
           id="email"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          placeholder="admin@qovre.nl"
           required
+          className={inputClass}
         />
       </div>
-      <div className="flex flex-col gap-1">
-        <label htmlFor="password">Wachtwoord</label>
+      <div>
+        <label htmlFor="password" className={labelClass}>Wachtwoord</label>
         <input
           id="password"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          placeholder="••••••••"
           required
+          className={inputClass}
         />
       </div>
-      {error && <p>{error}</p>}
-      <button type="submit" disabled={loading}>
+      {error && (
+        <p className="text-xs text-red-400 bg-red-500/5 border border-red-500/20 rounded-xl px-4 py-3">
+          {error}
+        </p>
+      )}
+      <button
+        type="submit"
+        disabled={loading}
+        className="w-full px-6 py-3 bg-white text-black font-semibold text-sm rounded-full hover:bg-neutral-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+      >
         {loading ? 'Bezig...' : 'Inloggen'}
       </button>
     </form>

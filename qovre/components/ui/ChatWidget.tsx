@@ -240,7 +240,7 @@ export default function ChatWidget() {
       <div className="flex gap-3">
         {/* WhatsApp Toggle */}
         <a
-          href="https://wa.me/31600000000"
+          href="https://wa.me/31647656343"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center w-14 h-14 rounded-full bg-green-500/10 border border-green-500/20 text-green-500 hover:bg-green-500 hover:text-white transition-all shadow-lg backdrop-blur-md"

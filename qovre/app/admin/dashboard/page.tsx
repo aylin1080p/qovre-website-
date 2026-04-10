@@ -21,15 +21,22 @@ export default async function AdminDashboardPage() {
   ])
 
   return (
-    <div className="p-8 flex flex-col gap-12">
-      <div className="flex items-center justify-between">
-        <h1>Admin Dashboard</h1>
+    <div className="min-h-screen bg-[#060608] text-neutral-100">
+      <div className="border-b border-neutral-800 bg-black/80 backdrop-blur-md px-8 py-4 flex items-center justify-between sticky top-0 z-10">
+        <span className="text-white font-semibold tracking-tight">Qovre Admin</span>
         <form action="/api/admin/logout" method="POST">
-          <button type="submit">Uitloggen</button>
+          <button
+            type="submit"
+            className="px-4 py-2 text-xs font-medium text-neutral-400 border border-neutral-800 rounded-full hover:text-white hover:border-neutral-700 transition-colors"
+          >
+            Uitloggen
+          </button>
         </form>
       </div>
-      <ServicesCRUD initialServices={services ?? []} />
-      <ContactList contacts={contacts ?? []} />
+      <div className="max-w-6xl mx-auto px-8 py-10 flex flex-col gap-12">
+        <ServicesCRUD initialServices={services ?? []} />
+        <ContactList contacts={contacts ?? []} />
+      </div>
     </div>
   )
 }
