@@ -33,25 +33,27 @@ export default async function CityENPage({ params }: { params: Promise<{ locale:
     url: `${BRAND.websiteUrl}/en/software-development-${citySlug}`,
     email: BRAND.email.primary,
     telephone: BRAND.phone.international,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: BRAND.location.city,
-      addressCountry: 'NL',
-    },
-    areaServed: {
-      '@type': 'City',
-      name: city.city,
-    },
+    address: { '@type': 'PostalAddress', addressLocality: BRAND.location.city, addressCountry: 'NL' },
+    areaServed: { '@type': 'City', name: city.city },
     description: `Qovre delivers software development and digital solutions for businesses in ${city.city}.`,
+  } : null
+
+  const breadcrumbSchema = city ? {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Qovre', item: `${BRAND.websiteUrl}/en` },
+      { '@type': 'ListItem', position: 2, name: `Software development ${city.city}`, item: `${BRAND.websiteUrl}/en/software-development-${citySlug}` },
+    ],
   } : null
 
   return (
     <>
       {localBusinessSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      )}
+      {breadcrumbSchema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       )}
       <CityLanding citySlug={citySlug} locale={locale} />
     </>
