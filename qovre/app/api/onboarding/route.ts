@@ -120,7 +120,7 @@ export async function POST(req: NextRequest) {
   }
 
   const resend = new Resend(process.env.RESEND_API_KEY?.trim())
-  const from = process.env.RESEND_FROM_EMAIL?.trim() ?? 'onboarding@resend.dev'
+  const from = process.env.RESEND_FROM_EMAIL?.trim() ?? 'contact@qovre.nl'
   const to = process.env.ADMIN_EMAIL?.trim() ?? 'contact@qovre.nl'
 
   // Strip data URL prefix from base64 before attaching

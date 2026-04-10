@@ -65,7 +65,7 @@ export async function POST(req: NextRequest) {
   // Send email via Resend
   const resend = new Resend(process.env.RESEND_API_KEY?.trim())
 
-  const fromAddress = process.env.RESEND_FROM_EMAIL?.trim() ?? 'onboarding@resend.dev'
+  const fromAddress = process.env.RESEND_FROM_EMAIL?.trim() ?? 'contact@qovre.nl'
   const { error: emailError } = await resend.emails.send({
     from: `Qovre <${fromAddress}>`,
     to: (process.env.ADMIN_EMAIL?.trim() ?? 'contact@qovre.nl'),
