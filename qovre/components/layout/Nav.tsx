@@ -49,7 +49,7 @@ export default function Nav() {
             {otherLocale}
           </Link>
           <Link
-            href={`/${locale}/contact`}
+            href={`/${locale}/start`}
             className="hidden md:block px-4 py-2 bg-white text-black text-sm font-semibold rounded-full hover:bg-neutral-200 transition-colors"
           >
             {t('cta')}
@@ -91,7 +91,7 @@ export default function Nav() {
               {otherLocale}
             </Link>
             <Link
-              href={`/${locale}/contact`}
+              href={`/${locale}/start`}
               onClick={() => setMobileOpen(false)}
               className="px-5 py-2.5 bg-white text-black text-sm font-semibold rounded-full hover:bg-neutral-200 transition-colors"
             >

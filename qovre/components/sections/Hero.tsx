@@ -1,12 +1,14 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { useTranslations } from 'next-intl'
+import { useTranslations, useLocale } from 'next-intl'
 import { fadeUp, staggerContainerSlow, lineReveal, viewportOnce } from '@/lib/animations'
 
 export default function Hero() {
   const t = useTranslations('hero')
+  const locale = useLocale()
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 px-4">
@@ -61,12 +63,12 @@ export default function Hero() {
            variants={fadeUp}
            className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a
-            href="#contact"
+          <Link
+            href={`/${locale}/start`}
             className="px-8 py-4 bg-white text-black font-semibold rounded-full hover:bg-neutral-200 transition-colors w-full sm:w-auto"
           >
             {t('primaryCta')}
-          </a>
+          </Link>
           <a
             href="#services"
             className="px-8 py-4 border border-neutral-800 text-neutral-300 font-semibold rounded-full hover:bg-neutral-900 transition-colors w-full sm:w-auto"
