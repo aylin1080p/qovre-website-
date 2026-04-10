@@ -10,7 +10,7 @@ interface MetaConfig {
   path: string; // e.g. "/en/ai-automation-systems"
   locale?: "en" | "nl";
   alternateLocale?: string; // the URL of the same page in the other language
-  image?: string; // path to OG image, defaults to /og-default.jpg
+  image?: string; // path to OG image, defaults to /opengraph-image (Next.js edge OG)
   noIndex?: boolean;
   keywords?: string[];
 }
@@ -21,7 +21,7 @@ export function generateMeta({
   path,
   locale = "en",
   alternateLocale,
-  image = "/og-default.jpg",
+  image = "/opengraph-image",
   noIndex = false,
   keywords = [],
 }: MetaConfig): Metadata {
