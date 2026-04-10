@@ -238,6 +238,242 @@ Modern automation goes beyond "if X then Y". AI models can classify, summarise, 
 
 A distributor in Rotterdam manually processed 200 incoming orders per day. Qovre built an integration that parses email orders, updates the ERP system, and automatically sends a confirmation to the customer. Time saving: 4 FTE hours per day. Investment: EUR 4,500. Payback period: 6 weeks.`,
   },
+  {
+    slug: 'webshop-bouwen-checklist',
+    category: 'web-development',
+    publishedAt: '2026-03-25',
+    readingTimeMinutes: 5,
+    titleNL: 'Webshop laten bouwen: de checklist die leveranciers niet altijd noemen',
+    titleEN: "Getting a webshop built: the checklist suppliers don't always mention",
+    teaserNL: 'Een webshop bestellen lijkt eenvoudig, maar de meeste teleurstellingen ontstaan door zaken die in de offerte ontbreken. Dit is wat u moet weten vóórdat u tekent.',
+    teaserEN: 'Ordering a webshop seems straightforward, but most disappointments arise from things missing in the quote. Here is what you need to know before you sign.',
+    contentNL: `Een webshop-offerte die er goed uitziet, kan verborgen kosten en beperkingen bevatten die pas na oplevering zichtbaar worden. Niet per definitie door kwade opzet, maar omdat leveranciers en klanten vaak langs elkaar heen praten over wat een "complete" webshop inhoudt.
+
+**Wat hoort standaard in een webshop?**
+
+Vraag uw leverancier expliciet naar: SSL-certificaat en HTTPS, mobielvriendelijk responsive design, GDPR-conforme cookiebanner en privacybeleid, koppeling met ten minste één Nederlandse betaalprovider (Mollie, Stripe), productpagina's met SEO-fields, voorraadbeheersysteem, orderbevestigingen per e-mail, en een terugkeerproces voor retouren. Als een of meer van deze punten "later" komen of niet in de offerte staan, vraag waarom.
+
+**Hosting en beheer: de terugkerende kosten**
+
+Veel offertes zijn eenmalig. De terugkerende kosten — hosting, domein, SSL-verlenging, plug-in-licenties, beveiligingsupdates — worden pas later zichtbaar. Vraag altijd naar de totale jaarlijkse eigendomskosten, niet alleen de bouwprijs.
+
+**Snelheid en technische schuld**
+
+Een goedkope webshop gebouwd op een geladen template kan bij een productcatalogus van 500+ items dramatisch traag worden. Vraag hoe de webshop presteert bij schaal: laadtijd bij 200 gelijktijdige bezoekers, paginagrootte, en of Core Web Vitals gemeten zijn.
+
+**Eigenaarschap van code en data**
+
+U wilt eigenaar zijn van uw eigen code, database en klantenbestand. Zorg dat de overeenkomst dit expliciet vastlegt. Locked-in platforms die u niet kunt exporteren of migreren zijn een risico dat groter wordt naarmate uw bedrijf groeit.
+
+**Wat Qovre meelevert als standaard**
+
+Bij elke webshop die wij bouwen zijn de bovenstaande punten standaard onderdeel van de oplevering. U tekent voor een compleet systeem, niet voor een kale basis.`,
+    contentEN: `A webshop quote that looks good can contain hidden costs and limitations that only become visible after delivery — not necessarily through bad intent, but because suppliers and clients often talk past each other about what a "complete" webshop actually includes.
+
+**What belongs in a webshop as standard?**
+
+Ask your supplier explicitly about: SSL certificate and HTTPS, mobile-friendly responsive design, GDPR-compliant cookie banner and privacy policy, connection with at least one payment provider, product pages with SEO fields, inventory management, order confirmation emails, and a returns process. If any of these are "later" or missing from the quote, ask why.
+
+**Hosting and management: the recurring costs**
+
+Many quotes are one-off. The recurring costs — hosting, domain, SSL renewal, plugin licences, security updates — only become visible later. Always ask for total annual ownership costs, not just the build price.
+
+**Speed and technical debt**
+
+A cheap webshop built on a heavy template can become dramatically slow with a product catalogue of 500+ items. Ask how the webshop performs at scale: load time at 200 simultaneous visitors, page size, and whether Core Web Vitals have been measured.
+
+**Ownership of code and data**
+
+You want to own your own code, database, and customer base. Make sure the agreement explicitly states this. Locked-in platforms you cannot export or migrate are a risk that grows as your business scales.
+
+**What Qovre delivers as standard**
+
+For every webshop we build, the above points are standard parts of the delivery. You sign for a complete system, not a bare foundation.`,
+  },
+  {
+    slug: 'geo-ai-zoekmachines-2026',
+    category: 'seo',
+    publishedAt: '2026-04-02',
+    readingTimeMinutes: 6,
+    titleNL: 'GEO: zo vindt ChatGPT en Perplexity uw bedrijf (of niet)',
+    titleEN: "GEO: how ChatGPT and Perplexity find your business — or don't",
+    teaserNL: 'AI-zoekmachines lezen het web anders dan Google. Bedrijven die hun website alleen optimaliseren voor klassieke SEO missen een groeiend kanaal. Dit is hoe Generative Engine Optimization werkt.',
+    teaserEN: 'AI search engines read the web differently from Google. Businesses optimising only for classic SEO are missing a growing channel. This is how Generative Engine Optimization works.',
+    contentNL: `In 2026 gebruikt een significant deel van de zakelijke zoekopdrachten een AI-interface: ChatGPT, Perplexity, Google AI Overviews, of Bing Copilot. Deze systemen werken anders dan een klassieke zoekmachine: ze synthetiseren informatie uit meerdere bronnen en presenteren een antwoord — zonder de gebruiker naar uw site te sturen, tenzij uw content als bron wordt geciteerd.
+
+**Wat AI-modellen anders lezen**
+
+Klassieke SEO optimaliseert voor trefwoorden, backlinks en technische crawlbaarheid. GEO optimaliseert voor bronwaarde: is uw content feitelijk correct, gestructureerd, uniek van perspectief, en makkelijk te citeren? AI-modellen selecteren bronnen op basis van autoriteit, helderheid en schaalbaarheid van de informatie.
+
+**llms.txt: de robots.txt voor AI**
+
+Een groeiend aantal websites implementeert een llms.txt-bestand — een door mensen leesbaar document dat AI-crawlers direct vertelt wie u bent, wat u doet, en welke pagina's relevant zijn. Het is geen formele standaard, maar grote AI-platforms honoreren het.
+
+**Structured data als directe invoer**
+
+JSON-LD schema markup (Organization, Service, FAQ, Article) wordt door AI-systemen gelezen als gestructureerde feiten. Een correct geïmplementeerd schema verhoogt de kans dat uw bedrijf wordt geciteerd in een AI-antwoord op een relevante zakelijke vraag.
+
+**Praktische GEO-checklist**
+
+Zorg dat uw website een llms.txt heeft met uw kernidentiteit, services en serviceregio. Implementeer Organization en Service schema op alle relevante pagina's. Schrijf inhoud die vragen beantwoordt in één alinea — AI-modellen citeren compacte, directe antwoorden. Vermijd vage merkentaal; gebruik concrete feiten, prijzen en processen.
+
+**Wat Qovre al heeft gedaan**
+
+Onze eigen website heeft een uitgebreide llms.txt, volledige schema-implementatie en GEO-geoptimaliseerde content op alle service- en stadspagina's. We passen dezelfde aanpak toe voor klanten.`,
+    contentEN: `In 2026, a significant share of business searches use an AI interface: ChatGPT, Perplexity, Google AI Overviews, or Bing Copilot. These systems work differently from a classic search engine: they synthesise information from multiple sources and present an answer — without sending the user to your site, unless your content is cited as a source.
+
+**What AI models read differently**
+
+Classic SEO optimises for keywords, backlinks, and technical crawlability. GEO optimises for source value: is your content factually accurate, well-structured, unique in perspective, and easy to cite? AI models select sources based on authority, clarity, and the scalability of the information.
+
+**llms.txt: the robots.txt for AI**
+
+A growing number of websites implement an llms.txt file — a human-readable document that tells AI crawlers directly who you are, what you do, and which pages are relevant. It is not a formal standard, but major AI platforms honour it.
+
+**Structured data as direct input**
+
+JSON-LD schema markup (Organization, Service, FAQ, Article) is read by AI systems as structured facts. Correctly implemented schema increases the chance that your business is cited in an AI answer to a relevant business query.
+
+**Practical GEO checklist**
+
+Ensure your website has an llms.txt with your core identity, services, and service region. Implement Organization and Service schema on all relevant pages. Write content that answers questions in one paragraph — AI models cite compact, direct answers. Avoid vague brand language; use concrete facts, prices, and processes.
+
+**What Qovre has already done**
+
+Our own website has a comprehensive llms.txt, full schema implementation, and GEO-optimised content on all service and city pages. We apply the same approach for clients.`,
+  },
+  {
+    slug: 'api-integraties-bedrijfssoftware',
+    category: 'automation',
+    publishedAt: '2026-04-08',
+    readingTimeMinutes: 5,
+    titleNL: 'API-integraties: hoe uw bedrijfssoftware samenwerkt zonder handmatig kopiëren',
+    titleEN: 'API integrations: how your business software works together without manual copying',
+    teaserNL: 'De meeste bedrijven kopiëren dagelijks data tussen systemen die eigenlijk al met elkaar kunnen praten. Een API-integratie elimineert die handmatige schakel — en het is goedkoper dan u denkt.',
+    teaserEN: 'Most businesses copy data every day between systems that could already talk to each other. An API integration eliminates that manual step — and it costs less than you think.',
+    contentNL: `Als uw medewerkers dagelijks data overtikken van het ene systeem naar het andere — van e-mail naar CRM, van webshop naar boekhouding, van formulier naar spreadsheet — dan is er een koppeling mogelijk die dat automatisch doet. In negen van de tien gevallen hebben de betrokken systemen al een API beschikbaar.
+
+**Wat een API precies doet**
+
+Een API (Application Programming Interface) is een gestandaardiseerde manier waarop software met andere software communiceert. Als uw webshop een nieuwe bestelling ontvangt, kan die via de API direct uw boekhoudsysteem bijwerken, een fulfillment-bericht sturen en de klant een gepersonaliseerde bevestiging geven — zonder menselijke tussenkomst.
+
+**Veelgebruikte integraties voor het MKB**
+
+Webshop → boekhouding (Exact, Moneybird, Twinfield). CRM → e-mailmarketing (Mailchimp, ActiveCampaign). Contactformulier → CRM + notificatie. Agenda → afsprakensysteem. ERP → klantportaal. Elk van deze koppelingen bespaart typisch 30 minuten tot 3 uur per dag per medewerker die ermee werkt.
+
+**Maatwerk vs. no-code tools**
+
+Tools zoals Zapier en Make zijn goed voor eenvoudige koppelingen. Bij complexe bedrijfslogica — uitzonderingsafhandeling, foutlogging, authenticatie, hogere volumes — loont een maatwerk integratie die precies doet wat nodig is zonder de beperkingen van een generiek platform.
+
+**Wat kost een API-integratie?**
+
+Een enkelvoudige koppeling (A → B, met foutafhandeling en logging) start bij Qovre vanaf EUR 1.500. Complexe multi-system workflows starten vanaf EUR 3.000. De terugverdientijd is bij vrijwel elke MKB-toepassing minder dan zes maanden.`,
+    contentEN: `If your employees copy data every day from one system to another — from email to CRM, from webshop to accounting, from form to spreadsheet — then there is an integration that can do that automatically. In nine out of ten cases, the systems involved already have an API available.
+
+**What an API actually does**
+
+An API (Application Programming Interface) is a standardised way for software to communicate with other software. When your webshop receives a new order, it can via the API immediately update your accounting system, send a fulfilment message, and give the customer a personalised confirmation — without human intervention.
+
+**Common integrations for SMEs**
+
+Webshop → accounting (Exact, Moneybird, Twinfield). CRM → email marketing (Mailchimp, ActiveCampaign). Contact form → CRM + notification. Calendar → appointment system. ERP → customer portal. Each of these connections typically saves 30 minutes to 3 hours per day per employee using them.
+
+**Custom vs. no-code tools**
+
+Tools like Zapier and Make are good for simple connections. With complex business logic — exception handling, error logging, authentication, higher volumes — a custom integration that does exactly what is needed is worthwhile, without the limitations of a generic platform.
+
+**What does an API integration cost?**
+
+A single connection (A → B, with error handling and logging) starts at EUR 1,500 at Qovre. Complex multi-system workflows start at EUR 3,000. The payback period for almost any SME application is less than six months.`,
+  },
+  {
+    slug: 'website-onderhoud-waarom-belangrijk',
+    category: 'web-development',
+    publishedAt: '2026-04-09',
+    readingTimeMinutes: 4,
+    titleNL: 'Waarom website-onderhoud geen kostenpost is maar een investering',
+    titleEN: 'Why website maintenance is not a cost but an investment',
+    teaserNL: 'Een website zonder onderhoud veroudert sneller dan u denkt. Beveiligingsgaten, verouderde afhankelijkheden en dalende prestaties zijn de stille killers van een goed converterende site.',
+    teaserEN: 'A website without maintenance ages faster than you think. Security gaps, outdated dependencies, and declining performance are the silent killers of a high-converting site.',
+    contentNL: `De meeste bedrijven behandelen website-onderhoud als een onnodige terugkerende kostenpost. Tot er iets mis gaat: een gehackte website, een betaalkoppeling die niet meer werkt, of een Google-penalisatie vanwege verouderde beveiligingsprotocollen. Op dat moment is een maand onderhoud goedkoper geweest dan één nacht crisisinterventie.
+
+**Wat veroudert er precies?**
+
+Frameworks en bibliotheken (Next.js, Node.js, plug-ins) krijgen regelmatig beveiligingsupdates. Zonder deze updates worden bekende kwetsbaarheden actief uitgebuit. SSL-certificaten verlopen. Betaalapparaten veranderen hun API. Browserstandaarden evolueren. Een website die vorig jaar perfect werkte kan dit jaar al problemen geven.
+
+**De impact op SEO**
+
+Google straft trage en onveilige websites af. Core Web Vitals verslechteren naarmate bibliotheken verouderen, afbeeldingen niet geoptimaliseerd worden bijgehouden, en caching-configuraties niet worden aangepast. Een site die eenmalig goed scoorde, verliest positie zonder actief onderhoud.
+
+**Wat goed onderhoud inhoudt**
+
+Maandelijkse afhankelijkheden-update en beveiligingsscan. Kwartaals performance-audit (Lighthouse, Core Web Vitals). Jaarlijkse inhoudelijke review: verouderde prijzen, inactieve contactpersonen, veranderde diensten. Monitoring van uptime en foutlogs.
+
+**Hoe Qovre onderhoud aanpakt**
+
+We bieden doorlopend onderhoud als transparant maandabonnement. U weet precies wat er gedaan wordt, wanneer en voor welk bedrag. Geen verrassingsfacturen, geen reactief brandblussen.`,
+    contentEN: `Most businesses treat website maintenance as an unnecessary recurring cost — until something goes wrong: a hacked website, a payment integration that stops working, or a Google penalty due to outdated security protocols. At that point, one month of maintenance would have been cheaper than one night of crisis intervention.
+
+**What actually goes out of date?**
+
+Frameworks and libraries (Next.js, Node.js, plugins) receive regular security updates. Without these updates, known vulnerabilities are actively exploited. SSL certificates expire. Payment providers change their APIs. Browser standards evolve. A website that worked perfectly last year can already have problems this year.
+
+**The impact on SEO**
+
+Google penalises slow and insecure websites. Core Web Vitals deteriorate as libraries age, images are not kept optimised, and caching configurations are not adjusted. A site that once scored well loses position without active maintenance.
+
+**What good maintenance involves**
+
+Monthly dependency update and security scan. Quarterly performance audit (Lighthouse, Core Web Vitals). Annual content review: outdated prices, inactive contacts, changed services. Uptime and error log monitoring.
+
+**How Qovre approaches maintenance**
+
+We offer ongoing maintenance as a transparent monthly subscription. You know exactly what is done, when, and for what amount. No surprise invoices, no reactive firefighting.`,
+  },
+  {
+    slug: 'mvp-saas-platform-bouwen',
+    category: 'saas',
+    publishedAt: '2026-04-10',
+    readingTimeMinutes: 6,
+    titleNL: 'Een SaaS MVP bouwen: hoe u snel valideert zonder technische schuld op te bouwen',
+    titleEN: 'Building a SaaS MVP: how to validate fast without accumulating technical debt',
+    teaserNL: 'Een Minimum Viable Product is bedoeld om snel te leren, niet om eeuwig live te blijven. Maar de keuzes die u in een MVP maakt, bepalen hoe moeilijk het wordt om daarna door te schalen.',
+    teaserEN: 'A Minimum Viable Product is meant to learn fast, not to stay live forever. But the choices you make in an MVP determine how difficult it becomes to scale afterwards.',
+    contentNL: `Het idee van een MVP is verleidelijk simpel: bouw het kleinste werkende product, test het met echte gebruikers, en leer. In de praktijk maken veel startups en scale-ups dezelfde fout: ze bouwen een MVP dat zo snel mogelijk feature-compleet moet zijn, in plaats van zo snel mogelijk validerend.
+
+**Wat een MVP wél en niet moet doen**
+
+Een MVP moet de kernhypothese testen — "willen gebruikers dit probleem op deze manier opgelost zien?" — en niets meer. Het hoeft niet schaalbaar te zijn, niet multi-tenant, niet perfect beveiligd. Het moet bewijzen dat het probleem bestaat en dat uw oplossing aansluit.
+
+**De valkuil van de technische schuld**
+
+Sommige shortcuts in een MVP zijn acceptabel (hardcoded configuratie, geen e-mailverificatie). Andere creëren schuld die later duur is om af te lossen: een monolithische database-architectuur die niet uitgesplitst kan worden, directe frontend-aanroepen naar de database zonder tussenlaag, of authenticatie die later niet uitbreidbaar is naar SSO. Het verschil leer je door ervaring — of door samen te werken met een partner die het eerder heeft gebouwd.
+
+**Gefaseerde bouw: sprint 1-2-3**
+
+Sprint 1: kern user journey (aanmelden, kernactie uitvoeren, resultaat zien). Sprint 2: authenticatie, basisbeheer, eerste feedback-loop. Sprint 3: iteratie op basis van gebruikersdata, of beslissing om te pivoten. Elke sprint levert iets testbaar op. U betaalt voor wat u leert, niet voor wat u hoopt.
+
+**Wanneer MVP en wanneer meer?**
+
+Als u al weet dat het product werkt — betalende klanten, herhaald gebruik, duidelijke retentie — dan is het tijd voor een productierijpe architectuur. Die overgang vergt planning. Qovre helpt teams bij zowel de MVP-fase als de doorgroei naar een schaalbaar platform.`,
+    contentEN: `The idea of an MVP is deceptively simple: build the smallest working product, test it with real users, and learn. In practice, many startups and scale-ups make the same mistake: they build an MVP that must be feature-complete as fast as possible, rather than validating as fast as possible.
+
+**What an MVP should and shouldn't do**
+
+An MVP should test the core hypothesis — "do users want this problem solved in this way?" — and nothing more. It does not need to be scalable, multi-tenant, or perfectly secure. It needs to prove that the problem exists and that your solution fits.
+
+**The technical debt trap**
+
+Some shortcuts in an MVP are acceptable (hardcoded configuration, no email verification). Others create debt that is expensive to repay later: a monolithic database architecture that cannot be split, direct frontend calls to the database without a service layer, or authentication that is not extensible to SSO. The difference comes from experience — or from working with a partner who has built it before.
+
+**Phased build: sprint 1-2-3**
+
+Sprint 1: core user journey (sign up, perform core action, see result). Sprint 2: authentication, basic management, first feedback loop. Sprint 3: iteration based on user data, or decision to pivot. Each sprint delivers something testable. You pay for what you learn, not what you hope.
+
+**When MVP and when more?**
+
+If you already know the product works — paying customers, repeated use, clear retention — it is time for a production-ready architecture. That transition requires planning. Qovre helps teams through both the MVP phase and the transition to a scalable platform.`,
+  },
 ]
 
 export const BLOG_CATEGORIES: Record<BlogPost['category'], { nl: string; en: string }> = {
