@@ -606,14 +606,12 @@ function Step4({ state, onChange, onFileChange, fileError, locale }: {
         />
       </div>
 
-      {/* SaaS pricing notice */}
-      {state.category === 'saas' && (
-        <p className="text-xs text-amber-400/80 bg-amber-500/5 border border-amber-500/15 rounded-xl px-4 py-3 leading-relaxed">
-          {isNL
-            ? 'Na uw aanvraag voeren wij een technische analyse uit en sturen u een gepersonaliseerde prijsopgave.'
-            : 'After your request we perform a technical analysis and send you a personalised quote.'}
-        </p>
-      )}
+      {/* Strategic analysis notice */}
+      <p className="text-xs text-blue-400/70 bg-blue-500/5 border border-blue-500/10 rounded-xl px-4 py-3 leading-relaxed">
+        {isNL
+          ? 'Na uw aanvraag stellen wij uw strategische routekaart en infrastructuuranalyse op — afgestemd op uw SLA-keuze en projectscope.'
+          : 'After your request we prepare your strategic roadmap and infrastructure analysis — aligned with your SLA choice and project scope.'}
+      </p>
     </div>
   )
 }

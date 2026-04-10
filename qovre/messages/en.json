@@ -102,7 +102,7 @@
       "email": "Email address",
       "phone": "Phone / WhatsApp",
       "service": "Requested service",
-      "budget": "Indicative budget",
+      "budget": "Project scale",
       "deadline": "Desired timeline",
       "message": "Describe your request",
       "consent": "I agree to be contacted about my enquiry",
@@ -124,7 +124,7 @@
   },
   "faq": {
     "title": "Frequently asked questions",
-    "subtitle": "Practical answers about pricing, timelines, technology, support, and AI solutions."
+    "subtitle": "Practical answers about our process, technical analysis, integrations, support, and AI solutions."
   },
   "intake": {
     "website": {

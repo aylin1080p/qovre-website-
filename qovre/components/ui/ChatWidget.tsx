@@ -18,9 +18,9 @@ const QUICK_REPLIES = {
         'Qovre biedt vier diensten: Maatwerk Software, AI & Automatisering, Content & Groei, en Doorlopend Onderhoud. [Bekijk alle diensten](/nl/diensten).',
     },
     {
-      label: 'Wat kost het?',
+      label: 'Hoe werkt de samenwerking?',
       response:
-        'Projecten starten vanaf €3.000 met vaste scope en prijs. Geen uurtarief. [Plan een gratis gesprek](/nl/contact).',
+        'Elk project begint met een technische analyse en infrastructuuranalyse. Op basis daarvan stellen wij een strategische routekaart op — volledig afgestemd op uw SLA-keuze en scope. [Start uw aanvraag](/nl/start).',
     },
     {
       label: 'Hoe lang duurt het?',
@@ -40,9 +40,9 @@ const QUICK_REPLIES = {
         'Qovre offers four services: Custom Software, AI & Automation, Content & Growth, and Ongoing Support. [View services](/en/services).',
     },
     {
-      label: 'Pricing',
+      label: 'How does it work?',
       response:
-        'Projects start from €3,000 with fixed scope. No hourly billing. [Book a free call](/en/contact).',
+        'Every project starts with a technical and infrastructure analysis. We then prepare a strategic roadmap — tailored to your SLA choice and project scope. [Start your request](/en/start).',
     },
     {
       label: 'Timeline',

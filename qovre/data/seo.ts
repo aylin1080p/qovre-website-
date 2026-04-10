@@ -188,10 +188,9 @@ export const SERVICES: ServiceInfo[] = [
     deliverablesEN: ['Strategic page structure', 'responsive design', 'contact and intake forms', 'baseline technical SEO', 'performance optimisation', 'multilingual implementation when needed'],
     technologies: ['Next.js', 'React', 'TypeScript', 'Supabase', 'PostgreSQL', 'Vercel', 'Schema.org structured data'],
     pricing: {
-      model: 'starting-from',
-      fromEUR: 3000,
-      noteNL: 'Zakelijke websites starten vanaf €3.000 excl. btw. De definitieve investering hangt af van scope, functionaliteiten, contentbehoefte en meertaligheid.',
-      noteEN: 'Business websites start from €3,000 excl. VAT. Final investment depends on scope, functionality, content requirements, and multilingual needs.',
+      model: 'custom-quote',
+      noteNL: 'De investering wordt op maat bepaald op basis van scope, functionaliteiten, SLA-niveau en infrastructuurwensen. Na uw aanvraag stellen wij een persoonlijke strategische routekaart op.',
+      noteEN: 'Investment is determined on a per-project basis according to scope, features, SLA tier, and infrastructure requirements. After your request we prepare a personalised strategic roadmap.',
     },
     timeline: {
       typicalNL: 'Gemiddeld 2 tot 4 weken voor standaard zakelijke websites, afhankelijk van feedbacksnelheid en contentaanlevering.',
@@ -199,7 +198,7 @@ export const SERVICES: ServiceInfo[] = [
     },
     keywordsNL: ['website laten maken', 'bedrijfswebsite', 'webdesign Den Haag', 'professionele website', 'zakelijke website', 'responsive website', 'technische SEO', 'meertalige website'],
     keywordsEN: ['business website development', 'custom company website', 'web design Netherlands', 'professional website', 'responsive business site', 'technical SEO setup', 'multilingual website'],
-    faqHooks: ['pricing', 'timeline', 'hosting', 'maintenance', 'seo'],
+    faqHooks: ['process', 'timeline', 'hosting', 'maintenance', 'seo'],
   },
   {
     slug: 'ecommerce-development',
@@ -218,11 +217,9 @@ export const SERVICES: ServiceInfo[] = [
     deliverablesEN: ['Product and category architecture', 'payment and shipping integrations', 'technical SEO for product pages', 'analytics setup', 'scalable content structure', 'management and maintenance guidance'],
     technologies: ['Next.js', 'Headless commerce', 'Shopify', 'WooCommerce', 'Stripe', 'Mollie', 'Supabase', 'PostgreSQL'],
     pricing: {
-      model: 'starting-from',
-      fromEUR: 4999,
-      typicalRangeEUR: [4999, 25000],
-      noteNL: 'Webshops starten vanaf €4.999 excl. btw. De uiteindelijke investering hangt af van productomvang, gewenste koppelingen, checkoutcomplexiteit, meertaligheid en beheerwensen.',
-      noteEN: 'Ecommerce projects start at €4,999 excl. VAT. Final investment depends on product volume, required integrations, checkout complexity, multilingual scope, and operational requirements.',
+      model: 'custom-quote',
+      noteNL: 'De investering wordt bepaald door productomvang, integraties, checkoutcomplexiteit en SLA-keuze. Na uw aanvraag voeren wij een technische analyse uit en stellen wij uw strategische routekaart op.',
+      noteEN: 'Investment depends on product volume, required integrations, checkout complexity, and SLA tier. After your request we conduct a technical analysis and prepare your strategic roadmap.',
     },
     timeline: {
       typicalNL: 'Gemiddeld 6 tot 12 weken, afhankelijk van assortiment, integraties, content en testomvang.',
@@ -230,7 +227,7 @@ export const SERVICES: ServiceInfo[] = [
     },
     keywordsNL: ['webshop laten maken', 'e-commerce ontwikkeling', 'online winkel bouwen', 'betaalintegratie', 'product SEO', 'shopify development', 'woocommerce webshop'],
     keywordsEN: ['ecommerce development', 'webshop development', 'online store build', 'payment integrations', 'product SEO', 'Shopify development', 'WooCommerce build'],
-    faqHooks: ['pricing', 'timeline', 'hosting', 'support', 'seo'],
+    faqHooks: ['process', 'timeline', 'hosting', 'support', 'seo'],
   },
   {
     slug: 'saas-development',
@@ -250,9 +247,8 @@ export const SERVICES: ServiceInfo[] = [
     technologies: ['Next.js', 'Node.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'REST APIs', 'Authentication systems', 'Vercel', 'AWS'],
     pricing: {
       model: 'custom-quote',
-      typicalRangeEUR: [5000, 50000],
-      noteNL: 'SaaS- en maatwerkprojecten worden projectmatig geoffreerd. Indicatief starten kleinere MVP-trajecten vaak vanaf circa €5.000 excl. btw, oplopend afhankelijk van logica, rollen, koppelingen en productdoelen.',
-      noteEN: 'SaaS and custom platform projects are quoted per project. Smaller MVP scopes often start around €5,000 excl. VAT and increase depending on logic, user roles, integrations, and product goals.',
+      noteNL: 'SaaS- en maatwerkprojecten worden op basis van projectscope, gebruikersrollen, integraties en SLA-niveau geanalyseerd. Na uw aanvraag ontvangt u een strategische routekaart en infrastructuuranalyse op maat.',
+      noteEN: 'SaaS and custom platform projects are assessed based on project scope, user roles, integrations, and SLA tier. After your request you receive a tailored strategic roadmap and infrastructure analysis.',
     },
     timeline: {
       typicalNL: 'Sterk afhankelijk van scope. Een compacte MVP kan in enkele weken tot maanden gerealiseerd worden; uitgebreidere platformen vragen een gefaseerde aanpak.',
@@ -260,7 +256,7 @@ export const SERVICES: ServiceInfo[] = [
     },
     keywordsNL: ['SaaS ontwikkeling', 'maatwerk platform', 'klantportaal laten maken', 'dashboard ontwikkeling', 'bedrijfssysteem bouwen', 'MVP development'],
     keywordsEN: ['SaaS development', 'custom platform development', 'client portal development', 'dashboard build', 'business system development', 'MVP development'],
-    faqHooks: ['pricing', 'timeline', 'technology', 'legal'],
+    faqHooks: ['process', 'timeline', 'technology', 'support'],
   },
   {
     slug: 'ai-automation',
@@ -280,9 +276,8 @@ export const SERVICES: ServiceInfo[] = [
     technologies: ['OpenAI', 'Gemini', 'Claude', 'Custom APIs', 'Webhook-based automation', 'Supabase', 'Serverless functions'],
     pricing: {
       model: 'custom-quote',
-      typicalRangeEUR: [1500, 15000],
-      noteNL: 'Automatiseringen worden op maat geprijsd. De investering hangt af van het aantal workflows, integraties, foutafhandeling, AI-logica en onderhoudsvereisten.',
-      noteEN: 'Automation projects are custom-priced. Investment depends on workflow count, integrations, failure handling, AI logic, and maintenance requirements.',
+      noteNL: 'Automatiseringsprojecten worden beoordeeld op basis van workflowcomplexiteit, integraties, AI-logica en SLA-niveau. Na uw aanvraag volgt een technische analyse met een strategisch implementatieplan.',
+      noteEN: 'Automation projects are assessed based on workflow complexity, integrations, AI logic, and SLA tier. After your request a technical analysis and strategic implementation plan follow.',
     },
     timeline: {
       typicalNL: 'Kleinere automatiseringen kunnen relatief snel worden opgeleverd; complexere procesautomatiseringen vragen analyse, testfases en afstemming.',
@@ -310,9 +305,8 @@ export const SERVICES: ServiceInfo[] = [
     technologies: ['Gemini', 'OpenAI', 'Claude', 'Vector search patterns', 'Prompt orchestration', 'Next.js'],
     pricing: {
       model: 'custom-quote',
-      typicalRangeEUR: [1500, 12000],
-      noteNL: 'De prijs is afhankelijk van de inhoudelijke scope, het gewenste kennisniveau, het aantal scenario\'s, de integraties en het onderhoudsmodel.',
-      noteEN: 'Pricing depends on content scope, required knowledge depth, scenario coverage, integrations, and the maintenance model.',
+      noteNL: 'De scope wordt bepaald op basis van kennisniveau, scenario\'s, integraties en SLA-keuze. Na uw aanvraag ontvangt u een strategisch chatbotplan afgestemd op uw bedrijfsdoelen.',
+      noteEN: 'Scope is determined by knowledge depth, scenario coverage, integrations, and SLA choice. After your request you receive a strategic chatbot plan aligned with your business goals.',
     },
     timeline: {
       typicalNL: 'Van compacte FAQ-bot tot uitgebreid intake- of service-assistent, afhankelijk van de benodigde kennisbasis en integraties.',
@@ -320,7 +314,7 @@ export const SERVICES: ServiceInfo[] = [
     },
     keywordsNL: ['AI chatbot laten maken', 'website chatbot', 'slimme assistent voor website', 'FAQ bot', 'lead chatbot'],
     keywordsEN: ['AI chatbot development', 'website chatbot', 'smart website assistant', 'FAQ bot', 'lead chatbot'],
-    faqHooks: ['ai', 'pricing', 'technology'],
+    faqHooks: ['ai', 'process', 'technology'],
   },
   {
     slug: 'seo-geo-optimization',
@@ -340,9 +334,8 @@ export const SERVICES: ServiceInfo[] = [
     technologies: ['Next.js metadata', 'Schema.org', 'sitemap generation', 'robots directives', 'LLM-readable content patterns'],
     pricing: {
       model: 'custom-quote',
-      typicalRangeEUR: [1000, 8000],
-      noteNL: 'SEO- en GEO-trajecten verschillen per website, bestaande contentbasis en ambitie. Nieuwe websites kunnen direct technisch goed worden ingericht; bestaande websites vragen vaak eerst een audit en herstructurering.',
-      noteEN: 'SEO and GEO work varies by website, content maturity, and growth goal. New websites can be built correctly from the start, while existing sites often need an audit and restructuring first.',
+      noteNL: 'SEO- en GEO-trajecten worden bepaald door de contentvolwassenheid, ambitie en infrastructuurstatus van uw website. Na analyse ontvangt u een concreet plan afgestemd op uw groeistrategie.',
+      noteEN: 'SEO and GEO scope depends on your website\'s content maturity, growth goals, and current infrastructure. After analysis you receive a concrete plan aligned with your strategy.',
     },
     timeline: {
       typicalNL: 'Afhankelijk van omvang kan dit variëren van een gerichte optimalisatieslag tot een bredere content- en structuurimplementatie over meerdere weken.',
@@ -370,9 +363,8 @@ export const SERVICES: ServiceInfo[] = [
     technologies: ['Project-specific stack support', 'Performance monitoring', 'Hosting review', 'Content update workflows'],
     pricing: {
       model: 'custom-quote',
-      typicalRangeEUR: [250, 5000],
-      noteNL: 'Onderhoud wordt afgestemd op systeemtype, frequentie en gewenst serviceniveau. Denk aan periodieke controles, halfjaarlijkse onderhoudsmomenten of jaarlijkse informatie-updates.',
-      noteEN: 'Maintenance is scoped according to system type, support frequency, and required service level. This may include periodic checks, biannual maintenance, or yearly information updates.',
+      noteNL: 'Onderhoud wordt afgestemd op systeemtype, gewenst SLA-niveau en continuïteitsbehoefte. Van periodieke controles tot jaarlijkse informatie-updates — altijd passend bij uw situatie.',
+      noteEN: 'Maintenance is aligned with system type, SLA tier, and continuity requirements. From periodic checks to yearly information updates — always matched to your situation.',
     },
     timeline: {
       typicalNL: 'Doorlopend of op afgesproken onderhoudsmomenten.',
@@ -452,7 +444,7 @@ export const TARGET_CITIES: CityLandingInfo[] = [
     priority: 'tier-2',
     introNL: 'Voor bedrijven in Tilburg ontwikkelt Qovre websites en digitale oplossingen die niet alleen presentabel zijn, maar ook commercieel en technisch sterker presteren. We helpen organisaties die hun diensten duidelijker willen tonen, beter gevonden willen worden of hun processen slimmer willen inrichten. Daarbij combineren we ontwerp, techniek, SEO en eventuele automatiseringen tot één samenhangend systeem. Dat maakt de oplossing bruikbaar op de korte termijn en schaalbaar op de langere termijn.',
     introEN: 'For businesses in Tilburg, Qovre develops websites and digital systems that are not only presentable, but commercially and technically stronger. We support organisations that want to present services more clearly, improve discoverability, or organise processes more intelligently. Design, technology, SEO, and automation are combined into one coherent system. That makes the solution useful in the short term and scalable over the longer term.',
-    localSignalsNL: ['Ideaal voor dienstverleners, e-commerce ondernemers en groeiende bedrijven.', 'Geschikt voor lokale SEO-doelen én bredere landelijke zichtbaarheid.', 'Goede basis voor contactaanvragen, offerteverzoeken en digitale intake.', 'Hostingadvies en onderhoud kunnen worden meegenomen.', 'Duidelijke technische structuur voorkomt onnodige herbouw later.'],
+    localSignalsNL: ['Ideaal voor dienstverleners, e-commerce ondernemers en groeiende bedrijven.', 'Geschikt voor lokale SEO-doelen én bredere landelijke zichtbaarheid.', 'Goede basis voor projectaanvragen, digitale intake en directe klantcommunicatie.', 'Hostingadvies en onderhoud kunnen worden meegenomen.', 'Duidelijke technische structuur voorkomt onnodige herbouw later.'],
     localSignalsEN: ['Ideal for service businesses, ecommerce operators, and growing companies.', 'Suitable for local SEO goals as well as wider national visibility.', 'Strong foundation for contact enquiries, quote requests, and digital intake.', 'Hosting guidance and maintenance can be included.', 'A clear technical structure helps avoid unnecessary rebuilds later.'],
   },
   {
@@ -512,7 +504,7 @@ export const TARGET_CITIES: CityLandingInfo[] = [
     priority: 'tier-2',
     introNL: 'Bedrijven in Apeldoorn kunnen met Qovre werken aan digitale oplossingen die betrouwbaarheid, schaalbaarheid en professionele positionering ondersteunen. Wij bouwen websites en systemen die niet alleen visueel sterk zijn, maar ook logisch, onderhoudbaar en vindbaar zijn opgezet. Dat is relevant voor bedrijven die online serieuzer willen opereren of processen willen stroomlijnen. Het resultaat is een oplossing die beter aansluit op echte bedrijfsbehoeften en toekomstige groei.',
     introEN: 'Businesses in Apeldoorn can work with Qovre on digital systems that support reliability, scalability, and professional positioning. We build websites and platforms that are not only visually strong, but logically structured, maintainable, and discoverable. That matters for organisations that want to operate more seriously online or streamline internal processes. The result is a solution that aligns better with real business needs and future growth.',
-    localSignalsNL: ['Geschikt voor dienstverleners, lokale ondernemingen en organisaties met groeiplannen.', 'Sterke basis voor offerteaanvragen, contactstromen en meertalige informatie.', 'Technische SEO en duidelijke contentstructuur versterken online zichtbaarheid.', 'Zowel standaard websites als maatwerk zijn mogelijk.', 'Hosting en onderhoud worden afgestemd op gebruik en verkeer.'],
+    localSignalsNL: ['Geschikt voor dienstverleners, lokale ondernemingen en organisaties met groeiplannen.', 'Sterke basis voor projectaanvragen, contactstromen en meertalige informatie.', 'Technische SEO en duidelijke contentstructuur versterken online zichtbaarheid.', 'Zowel standaard websites als maatwerk zijn mogelijk.', 'Hosting en onderhoud worden afgestemd op gebruik en verkeer.'],
     localSignalsEN: ['Suitable for service firms, local businesses, and organisations with growth plans.', 'Strong base for quote requests, contact flows, and multilingual information.', 'Technical SEO and clear content structure strengthen visibility online.', 'Both standard websites and custom builds are available.', 'Hosting and maintenance are matched to use case and traffic.'],
   },
   {
@@ -562,8 +554,8 @@ export const TARGET_CITIES: CityLandingInfo[] = [
     priority: 'tier-2',
     introNL: 'In Delft helpt Qovre bedrijven die hun digitale basis willen professionaliseren met websites, platforms en automatiseringen die technisch sterk en zakelijk bruikbaar zijn. We richten ons op oplossingen die schaalbaar zijn, goed vindbaar zijn en logisch aansluiten op het bedrijfsproces. Dat betekent meer dan alleen design: ook performance, informatiearchitectuur en technische keuzes tellen mee. Voor bedrijven in Delft levert dat een fundament op waarop verder gebouwd kan worden.',
     introEN: 'In Delft, Qovre helps businesses professionalise their digital foundation through websites, platforms, and automation systems that are technically strong and commercially useful. We focus on solutions that are scalable, discoverable, and logically connected to the business process. That means more than design alone: performance, information architecture, and technical decisions all matter. Businesses in Delft gain a foundation they can continue building on.',
-    localSignalsNL: ['Geschikt voor technologiegedreven bedrijven en specialistische dienstverlening.', 'SaaS, websites en AI-oplossingen kunnen gecombineerd worden.', 'Technische documentatie en onderhoudbaarheid worden serieus meegenomen.', 'Lokale zichtbaarheid en landelijke positionering sluiten elkaar niet uit.', 'Projecten kunnen gefaseerd worden uitgerold afhankelijk van budget en scope.'],
-    localSignalsEN: ['Suitable for technology-led businesses and specialised service providers.', 'SaaS, websites, and AI solutions can be combined where relevant.', 'Technical documentation and maintainability are taken seriously.', 'Local visibility and national positioning can be pursued together.', 'Projects can be phased according to budget and scope.'],
+    localSignalsNL: ['Geschikt voor technologiegedreven bedrijven en specialistische dienstverlening.', 'SaaS, websites en AI-oplossingen kunnen gecombineerd worden.', 'Technische documentatie en onderhoudbaarheid worden serieus meegenomen.', 'Lokale zichtbaarheid en landelijke positionering sluiten elkaar niet uit.', 'Projecten kunnen gefaseerd worden uitgerold op basis van schaalbehoefte en scope.'],
+    localSignalsEN: ['Suitable for technology-led businesses and specialised service providers.', 'SaaS, websites, and AI solutions can be combined where relevant.', 'Technical documentation and maintainability are taken seriously.', 'Local visibility and national positioning can be pursued together.', 'Projects can be phased according to scale requirements and scope.'],
   },
   {
     slug: 'zoetermeer',
@@ -572,7 +564,7 @@ export const TARGET_CITIES: CityLandingInfo[] = [
     priority: 'tier-2',
     introNL: 'Qovre levert in Zoetermeer websites en digitale oplossingen die gericht zijn op professionele uitstraling, duidelijke communicatie en technische betrouwbaarheid. Voor bedrijven die meer aanvragen willen genereren of hun online proces willen stroomlijnen, is een logische digitale basis essentieel. Wij helpen met structuur, SEO, GEO, formulieren, automatisering en onderhoudbaarheid. Zo ontstaat een systeem dat niet alleen mooi is bij oplevering, maar ook bruikbaar blijft naarmate het bedrijf groeit.',
     introEN: 'Qovre delivers websites and digital systems in Zoetermeer that focus on professional presentation, clear communication, and technical reliability. For businesses that want more enquiries or a more structured digital process, a logical foundation is essential. We support with structure, SEO, GEO, forms, automation, and maintainability. The result is a system that is not only attractive at launch, but remains useful as the business grows.',
-    localSignalsNL: ['Sterk voor dienstverleners, lokale bedrijven en regionale ondernemers.', 'SEO en city-content helpen de site beter regionaal te positioneren.', 'Contact- en offertetrajecten kunnen worden vereenvoudigd met slimme formulieren.', 'Hostingadvies wordt afgestemd op verwacht verkeer en functionaliteit.', 'Ook geschikt voor meertalige websites.'],
+    localSignalsNL: ['Sterk voor dienstverleners, lokale bedrijven en regionale ondernemers.', 'SEO en city-content helpen de site beter regionaal te positioneren.', 'Projectaanvragen en contacttrajecten kunnen worden vereenvoudigd met slimme intake-formulieren.', 'Hostingadvies wordt afgestemd op verwacht verkeer en functionaliteit.', 'Ook geschikt voor meertalige websites.'],
     localSignalsEN: ['Strong fit for service businesses, local companies, and regional entrepreneurs.', 'SEO and city content help position the site more strongly in the region.', 'Contact and quotation paths can be simplified through smart forms.', 'Hosting advice is matched to expected traffic and functionality.', 'Also suitable for multilingual websites.'],
   },
   {
@@ -600,19 +592,19 @@ export const TARGET_CITIES: CityLandingInfo[] = [
 export const FAQ: FAQItem[] = [
   {
     id: 'faq-01',
-    category: 'pricing',
-    questionNL: 'Wat kost een zakelijke website bij Qovre?',
-    answerNL: "Zakelijke websites bij Qovre starten vanaf €3.000 excl. btw. De definitieve prijs hangt af van het aantal pagina\'s, contentbehoefte, functionaliteiten, meertaligheid en eventuele integraties.",
-    questionEN: 'How much does a business website cost at Qovre?',
-    answerEN: 'Business websites at Qovre start from €3,000 excl. VAT. Final pricing depends on page count, content requirements, functionality, multilingual scope, and integrations.',
+    category: 'process',
+    questionNL: 'Hoe verloopt het intakeproces bij Qovre?',
+    answerNL: 'Het intakeproces begint met een digitale aanvraag via het /start-formulier. Daarna voeren wij een technische analyse en infrastructuuranalyse uit en stellen wij een strategische routekaart op — volledig afgestemd op uw SLA-keuze, infrastructuurwensen en projectdoelen.',
+    questionEN: 'How does the intake process work at Qovre?',
+    answerEN: 'The intake process starts with a digital request via the /start form. We then conduct a technical and infrastructure analysis and prepare a strategic roadmap — fully aligned with your SLA choice, infrastructure preferences, and project goals.',
   },
   {
     id: 'faq-02',
-    category: 'pricing',
-    questionNL: 'Wat kost een webshop of e-commerce project?',
-    answerNL: 'Webshops starten vanaf €4.999 excl. btw. De investering wordt bepaald door productomvang, betaal- en verzendintegraties, categoriecomplexiteit, meertaligheid, gewenste koppelingen en beheerbehoefte.',
-    questionEN: 'What does an ecommerce project cost?',
-    answerEN: 'Ecommerce projects start from €4,999 excl. VAT. Investment depends on product volume, payment and shipping integrations, category complexity, multilingual scope, desired integrations, and management requirements.',
+    category: 'process',
+    questionNL: 'Wat omvat de technische analyse na mijn aanvraag?',
+    answerNL: 'Na uw aanvraag analyseren wij uw projectscope, technische vereisten, infrastructuurbehoeften en integratiemogelijkheden. Op basis hiervan stellen wij een gepersonaliseerde infrastructuuranalyse en strategisch plan op dat aansluit bij uw SLA-keuze en langetermijndoelen.',
+    questionEN: 'What does the technical analysis after my request cover?',
+    answerEN: 'After your request, we analyse your project scope, technical requirements, infrastructure needs, and integration options. Based on this, we prepare a personalised infrastructure analysis and strategic plan aligned with your SLA choice and long-term goals.',
   },
   {
     id: 'faq-03',
@@ -642,9 +634,9 @@ export const FAQ: FAQItem[] = [
     id: 'faq-06',
     category: 'support',
     questionNL: 'Bieden jullie hosting aan?',
-    answerNL: 'Ja, hosting kan als aanvullende dienst worden verzorgd. De keuze hangt af van verkeer, functionaliteit, schaalbehoefte, beveiliging en onderhoudsvereisten. Hostingkosten worden apart of als onderdeel van een passend pakket besproken.',
+    answerNL: 'Ja, hosting kan als aanvullende dienst worden verzorgd. De keuze hangt af van verwacht verkeer, functionaliteiten, schaalbehoefte, beveiligingsniveau en uw SLA-keuze. Hostingvereisten worden afgestemd op uw technische specificaties.',
     questionEN: 'Do you provide hosting?',
-    answerEN: 'Yes, hosting can be provided as an additional service. The right setup depends on traffic, functionality, scale requirements, security, and maintenance expectations. Hosting costs are discussed separately or as part of a suitable package.',
+    answerEN: 'Yes, hosting can be provided as an additional service. The right setup depends on expected traffic, functionality, scale requirements, security level, and your SLA choice. Hosting requirements are aligned with your technical specifications.',
   },
   {
     id: 'faq-07',
@@ -696,11 +688,11 @@ export const FAQ: FAQItem[] = [
   },
   {
     id: 'faq-13',
-    category: 'legal',
-    questionNL: 'Kan er zonder vast prijsvoorstel worden gestart?',
-    answerNL: 'Nee. Ook wanneer een project op maat wordt geoffreerd, wordt de scope eerst afgestemd. Richtprijzen kunnen vooraf worden gedeeld, maar een definitief voorstel volgt na inhoudelijke inventarisatie.',
-    questionEN: 'Can a project start without a defined proposal?',
-    answerEN: 'No. Even when a project is custom quoted, scope is aligned first. Indicative pricing can be shared in advance, but a final proposal follows after proper project discovery.',
+    category: 'support',
+    questionNL: 'Wat is het verschil tussen de SLA-pakketten?',
+    answerNL: 'De SLA-pakketten (Essential, Growth en Partner) verschillen in ondersteuningsniveau, reactietijden en servicecontinuïteit. Essential biedt een degelijke basis, Growth voegt prioritaire ondersteuning en maandelijkse reviews toe, en Partner biedt volledige strategische samenwerking met een vaste contactpersoon.',
+    questionEN: 'What is the difference between the SLA packages?',
+    answerEN: 'The SLA packages (Essential, Growth, and Partner) differ in support level, response times, and service continuity. Essential provides a solid foundation, Growth adds priority support and monthly reviews, and Partner offers full strategic collaboration with a dedicated contact person.',
   },
   {
     id: 'faq-14',

@@ -102,7 +102,7 @@
       "email": "E-mailadres",
       "phone": "Telefoon / WhatsApp",
       "service": "Gewenste dienst",
-      "budget": "Indicatief budget",
+      "budget": "Projectschaal",
       "deadline": "Gewenste planning",
       "message": "Omschrijf uw aanvraag",
       "consent": "Ik ga akkoord met contact over mijn aanvraag",
@@ -124,7 +124,7 @@
   },
   "faq": {
     "title": "Veelgestelde vragen",
-    "subtitle": "Praktische antwoorden over prijzen, planning, techniek, support en AI-oplossingen."
+    "subtitle": "Praktische antwoorden over onze werkwijze, technische analyse, integraties, support en AI-oplossingen."
   },
   "intake": {
     "website": {
