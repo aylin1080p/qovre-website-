@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BRAND.websiteUrl}/en/industries`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BRAND.websiteUrl}/en/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.9 },
     { url: `${BRAND.websiteUrl}/en/about`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BRAND.websiteUrl}/en/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     // Dutch core
     { url: `${BRAND.websiteUrl}/nl`, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
     { url: `${BRAND.websiteUrl}/nl/diensten`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
@@ -23,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BRAND.websiteUrl}/nl/sectoren`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BRAND.websiteUrl}/nl/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.9 },
     { url: `${BRAND.websiteUrl}/nl/over-ons`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BRAND.websiteUrl}/nl/veelgestelde-vragen`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
   ];
 
   // Service pages — EN + NL

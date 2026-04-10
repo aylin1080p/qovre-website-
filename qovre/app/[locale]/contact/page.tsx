@@ -1,5 +1,20 @@
 import { getTranslations } from 'next-intl/server'
 import ContactForm from '@/components/sections/ContactForm'
+import { generateMeta } from '@/lib/metadata'
+import { BRAND } from '@/data/seo'
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  return generateMeta({
+    title: locale === 'nl' ? 'Contact' : 'Contact',
+    description: locale === 'nl'
+      ? 'Neem contact op met Qovre. Reactie binnen 1 werkdag. Vrijblijvend eerste gesprek, vaste prijs per project.'
+      : 'Get in touch with Qovre. Response within 1 business day. No-obligation first call, fixed price per project.',
+    path: `/${locale}/contact`,
+    locale: locale as 'nl' | 'en',
+    alternateLocale: `${BRAND.websiteUrl}/${locale === 'nl' ? 'en' : 'nl'}/contact`,
+  })
+}
 
 export default async function ContactPage({
   params,

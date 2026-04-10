@@ -1,5 +1,6 @@
 import Process from '@/components/sections/Process'
 import { generateMeta } from '@/lib/metadata'
+import { BRAND } from '@/data/seo'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -8,6 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: "From first call to live delivery — Qovre's transparent step-by-step project process.",
     path: `/${locale}/process`,
     locale: 'en',
+    alternateLocale: `${BRAND.websiteUrl}/nl/werkwijze`,
   })
 }
 

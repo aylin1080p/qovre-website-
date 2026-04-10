@@ -11,6 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       : 'Explore all Qovre services: websites, ecommerce, SaaS, AI automation, and SEO.',
     path: `/${locale}/services`,
     locale: locale as 'nl' | 'en',
+    alternateLocale: `${BRAND.websiteUrl}/${locale === 'nl' ? 'en/services' : 'nl/diensten'}`,
   })
 }
 

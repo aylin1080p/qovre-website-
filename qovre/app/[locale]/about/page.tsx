@@ -9,6 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     description: 'Qovre is a digital studio based in The Hague, building websites, SaaS, and AI systems for businesses across the Netherlands.',
     path: `/${locale}/about`,
     locale: 'en',
+    alternateLocale: `${BRAND.websiteUrl}/nl/over-ons`,
   })
 }
 
