@@ -11,6 +11,42 @@ interface ServiceDetailProps {
   locale: string
 }
 
+function getCTAHeadline(category: string, locale: string): string {
+  const map: Record<string, { nl: string; en: string }> = {
+    'web-development': {
+      nl: 'Klaar voor een professionele website?',
+      en: 'Ready for a professional website?',
+    },
+    'ecommerce': {
+      nl: 'Uw webshop laten bouwen?',
+      en: 'Ready to build your webshop?',
+    },
+    'saas': {
+      nl: 'Een maatwerk platform bouwen?',
+      en: 'Ready to build a custom platform?',
+    },
+    'automation': {
+      nl: 'Uw processen slimmer inrichten?',
+      en: 'Ready to automate your processes?',
+    },
+    'ai-chatbots': {
+      nl: 'Een AI-assistent voor uw website?',
+      en: 'Ready to add an AI assistant?',
+    },
+    'seo-geo': {
+      nl: 'Beter gevonden worden?',
+      en: 'Ready to improve your discoverability?',
+    },
+    'maintenance': {
+      nl: 'Betrouwbaar onderhoud nodig?',
+      en: 'Need reliable ongoing support?',
+    },
+  }
+  const fallback = { nl: 'Klaar om te starten?', en: 'Ready to get started?' }
+  const entry = map[category] ?? fallback
+  return locale === 'nl' ? entry.nl : entry.en
+}
+
 export default function ServiceDetail({ slug, locale }: ServiceDetailProps) {
   const service = SERVICES.find((s) => s.slug === slug)
 
@@ -83,13 +119,12 @@ export default function ServiceDetail({ slug, locale }: ServiceDetailProps) {
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-                {locale === 'nl' ? 'Klaar om te automatiseren?' : 'Ready to automate?'}
+                {getCTAHeadline(service.category, locale)}
               </h2>
               <p className="text-neutral-400 text-lg mb-8">
-                {locale === 'nl' 
-                  ? 'Plan een vrijblijvend adviesgesprek in en ontdek hoe wij uw bedrijf naar een hoger niveau tillen.' 
-                  : 'Schedule a discovery call and find out how we can take your business to the next level.'
-                }
+                {locale === 'nl'
+                  ? 'Plan een vrijblijvend gesprek en ontdek wat Qovre voor u kan betekenen.'
+                  : 'Schedule a free call and find out what Qovre can do for you.'}
               </p>
             </div>
             <ContactForm />
