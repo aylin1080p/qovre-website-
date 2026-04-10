@@ -68,7 +68,7 @@ export async function POST(req: NextRequest) {
   const fromAddress = process.env.RESEND_FROM_EMAIL?.trim() ?? 'contact@qovre.nl'
   const { error: emailError } = await resend.emails.send({
     from: `Qovre <${fromAddress}>`,
-    to: (process.env.ADMIN_EMAIL?.trim() ?? 'contact@qovre.nl'),
+    to: (process.env.ADMIN_EMAIL?.trim() ?? '4ylingunes@gmail.com'),
     subject: `New contact form submission from ${name}`,
     text: [
       `Name: ${name}`,

@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
   const fromAddress = process.env.RESEND_FROM_EMAIL ?? 'contact@qovre.nl'
   const { error } = await resend.emails.send({
     from: `Qovre System <${fromAddress}>`,
-    to: process.env.ADMIN_EMAIL ?? 'contact@qovre.nl',
+    to: process.env.ADMIN_EMAIL ?? '4ylingunes@gmail.com',
     subject: `⚠️ Qovre Chat: Daily limit warning (${count}/1500)`,
     text: [
       `The Qovre AI chat has reached ${count} requests today.`,

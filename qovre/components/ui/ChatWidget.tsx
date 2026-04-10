@@ -238,9 +238,13 @@ export default function ChatWidget() {
       </AnimatePresence>
 
       <div className="flex gap-3">
-        {/* WhatsApp Toggle */}
+        {/* WhatsApp — locale-aware pre-defined message */}
         <a
-          href="https://wa.me/31647656343"
+          href={`https://wa.me/31647656343?text=${encodeURIComponent(
+            locale === 'nl'
+              ? 'Hallo Qovre team, ik wil graag overleggen over een strategisch project. Kunt u mij informeren over het technische analyseproces?'
+              : 'Hello Qovre team, I would like to discuss a strategic project. Could you provide information about the technical analysis process?'
+          )}`}
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center w-14 h-14 rounded-full bg-green-500/10 border border-green-500/20 text-green-500 hover:bg-green-500 hover:text-white transition-all shadow-lg backdrop-blur-md"

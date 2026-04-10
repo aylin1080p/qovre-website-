@@ -261,7 +261,7 @@ export async function POST(req: NextRequest) {
   // ---------------------------------------------------------------------------
   const resend = new Resend(process.env.RESEND_API_KEY?.trim())
   const from = process.env.RESEND_FROM_EMAIL?.trim() ?? 'contact@qovre.nl'
-  const adminTo = process.env.ADMIN_EMAIL?.trim() ?? 'contact@qovre.nl'
+  const adminTo = process.env.ADMIN_EMAIL?.trim() ?? '4ylingunes@gmail.com'
 
   const attachments =
     data.fileBase64 && data.fileName
