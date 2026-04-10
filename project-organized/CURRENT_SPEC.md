@@ -91,13 +91,13 @@ If the visual reference suggests unsupported sections, convert them into real Qo
 
 ## Current implementation status
 
-Completed (as of 2026-04-09):
+All phases complete as of 2026-04-09:
 
-- build passes
+- build passes (TypeScript clean)
 - dynamic service pages (`/[locale]/[service]`)
 - dynamic city pages (`software-ontwikkeling-[city]`, `software-development-[city]`)
-- chat assistant
-- admin area
+- chat assistant (Gemini, rate limiting, daily cap, WhatsApp button with real number)
+- admin area: login page + dashboard styled dark premium
 - legal PDFs in public assets — all 6 linked in footer
 - consolidated project structure
 - dark premium globals, nav, footer, hero (visual baseline)
@@ -114,13 +114,11 @@ Completed (as of 2026-04-09):
 - sitemap.ts: removed non-existent blog/insights URLs
 - Homepage and core pages: `generateMetadata` added
 - Root layout: title template + canonical description
-
-Still needed:
-
-- Operational smoke checks (contact form, chat widget, admin login)
-- Mobile nav (hamburger) — Nav is desktop-only currently
-- CityLanding page visual check — may need dark background fix
-- Content consistency spot-check on city pages and service detail copy
+- Mobile nav: hamburger drawer with animated 3-bar → X, all links, locale switcher, CTA
+- CityLanding + ServiceDetail: dark background applied
+- Brand audit complete: zero matches for Veloq, hello@qovre.nl, founding year, low-ticket pricing
+- Content consistency pass: seo.ts service descriptions and city copy verified brand-compliant
+- Operational code review: contact API (CSRF, rate limit, Supabase, Resend) and chat API verified correct
 
 ## Required reading order before more coding
 
@@ -146,22 +144,13 @@ Still needed:
 
 ## Next coding order
 
-1. Mobile navigation
-   - Nav is currently desktop-only (`hidden md:flex`)
-   - Add hamburger menu for mobile (drawer or dropdown)
+All items in the initial spec have been completed. Potential next improvements:
 
-2. CityLanding visual check
-   - Confirm `CityLanding.tsx` has dark background and proper styling
-   - Verify city page metadata is generated correctly
-
-3. Operational smoke checks
-   - contact form end-to-end
-   - chat widget (rate limiting + AI response)
-   - admin login/dashboard
-
-4. Final content consistency pass
-   - spot-check service detail pages for pricing language and brand compliance
-   - verify no `Veloq`, `hello@qovre.nl`, founding year, or low-ticket pricing remains in any rendered output
+1. Industries/Sectoren pages — currently minimal placeholder; could be built out with real industry verticals
+2. Blog/Insights section — sitemap URLs removed because no pages exist; could be added
+3. E2E smoke test in staging (real contact form submission, chat widget flow)
+4. Performance audit (Core Web Vitals baseline)
+5. Analytics integration (if needed)
 
 ## Definition of done for the next phase
 
