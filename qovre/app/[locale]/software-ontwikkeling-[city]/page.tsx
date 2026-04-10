@@ -1,5 +1,6 @@
 import CityLanding from '@/components/sections/CityLanding'
-import { TARGET_CITIES } from '@/data/seo'
+import { TARGET_CITIES, BRAND } from '@/data/seo'
+import { generateMeta } from '@/lib/metadata'
 
 export async function generateStaticParams() {
   return TARGET_CITIES.map((city) => ({
@@ -7,7 +8,52 @@ export async function generateStaticParams() {
   }))
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; city: string }> }) {
+  const { city: citySlug } = await params
+  const city = TARGET_CITIES.find((c) => c.slug === citySlug)
+  if (!city) return {}
+
+  return generateMeta({
+    title: `Software ontwikkeling ${city.city}`,
+    description: `Qovre bouwt websites, SaaS-platformen en AI-oplossingen voor bedrijven in ${city.city} en omgeving. Remote werkwijze, vaste prijs, snelle oplevering.`,
+    path: `/nl/software-ontwikkeling-${citySlug}`,
+    locale: 'nl',
+    alternateLocale: `${BRAND.websiteUrl}/en/software-development-${citySlug}`,
+  })
+}
+
 export default async function CityNLPage({ params }: { params: Promise<{ locale: string; city: string }> }) {
-  const { locale, city } = await params
-  return <CityLanding citySlug={city} locale={locale} />
+  const { locale, city: citySlug } = await params
+  const city = TARGET_CITIES.find((c) => c.slug === citySlug)
+
+  const localBusinessSchema = city ? {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: BRAND.brandName,
+    url: `${BRAND.websiteUrl}/nl/software-ontwikkeling-${citySlug}`,
+    email: BRAND.email.primary,
+    telephone: BRAND.phone.international,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: BRAND.location.city,
+      addressCountry: 'NL',
+    },
+    areaServed: {
+      '@type': 'City',
+      name: city.city,
+    },
+    description: `Qovre levert software ontwikkeling en digitale oplossingen voor bedrijven in ${city.city}.`,
+  } : null
+
+  return (
+    <>
+      {localBusinessSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+      )}
+      <CityLanding citySlug={citySlug} locale={locale} />
+    </>
+  )
 }

@@ -1,5 +1,6 @@
 import { useLocale } from 'next-intl'
 import { generateMeta } from '@/lib/metadata'
+import { BRAND } from '@/data/seo'
 import Hero from '@/components/sections/Hero'
 import ServicesGrid from '@/components/sections/ServicesGrid'
 import TrustBar from '@/components/sections/TrustBar'
@@ -18,21 +19,41 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       : 'Qovre builds scalable websites, ecommerce, SaaS platforms, AI automation, and technical SEO/GEO for businesses in the Netherlands.',
     path: `/${locale}`,
     locale: locale as 'nl' | 'en',
-    alternateLocale: locale === 'nl' ? `https://www.qovre.nl/en` : `https://www.qovre.nl/nl`,
+    alternateLocale: locale === 'nl' ? `${BRAND.websiteUrl}/en` : `${BRAND.websiteUrl}/nl`,
   })
+}
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: BRAND.brandName,
+  url: BRAND.websiteUrl,
+  description: BRAND.tagline.nl,
+  inLanguage: ['nl', 'en'],
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${BRAND.websiteUrl}/nl/veelgestelde-vragen`,
+    'query-input': 'required name=search_term_string',
+  },
 }
 
 export default function HomePage() {
   const locale = useLocale()
 
   return (
-    <div className="flex flex-col gap-0 overflow-x-hidden">
-      <Hero />
-      <ServicesGrid locale={locale} />
-      <TrustBar locale={locale} />
-      <Process />
-      <FAQ locale={locale} />
-      <ContactSection locale={locale} />
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <div className="flex flex-col gap-0 overflow-x-hidden">
+        <Hero />
+        <ServicesGrid locale={locale} />
+        <TrustBar locale={locale} />
+        <Process />
+        <FAQ locale={locale} />
+        <ContactSection locale={locale} />
+      </div>
+    </>
   )
 }

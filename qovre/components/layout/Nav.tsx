@@ -14,6 +14,7 @@ export default function Nav() {
     { href: `/${locale}/${locale === 'nl' ? 'diensten' : 'services'}`, label: t('services') },
     { href: `/${locale}/${locale === 'nl' ? 'werkwijze' : 'process'}`, label: t('process') },
     { href: `/${locale}/${locale === 'nl' ? 'over-ons' : 'about'}`, label: t('about') },
+    { href: `/${locale}/${locale === 'nl' ? 'veelgestelde-vragen' : 'faq'}`, label: locale === 'nl' ? 'FAQ' : 'FAQ' },
     { href: `/${locale}/contact`, label: t('contact') },
   ]
 
