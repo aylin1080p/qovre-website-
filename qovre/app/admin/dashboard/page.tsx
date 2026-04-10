@@ -1,8 +1,11 @@
 import { cookies } from 'next/headers'
 import { createServerClient } from '@supabase/ssr'
 import { redirect } from 'next/navigation'
+import { createServiceClient } from '@/lib/supabase'
 import ServicesCRUD from '@/components/admin/ServicesCRUD'
 import ContactList from '@/components/admin/ContactList'
+import SubmissionsList from '@/components/admin/SubmissionsList'
+import type { Submission } from '@/lib/onboarding-types'
 
 export default async function AdminDashboardPage() {
   const cookieStore = await cookies()
@@ -15,9 +18,12 @@ export default async function AdminDashboardPage() {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/admin')
 
-  const [{ data: services }, { data: contacts }] = await Promise.all([
+  const serviceClient = createServiceClient()
+
+  const [{ data: services }, { data: contacts }, { data: onboardingSubmissions }] = await Promise.all([
     supabase.from('services').select('*').order('order_index'),
     supabase.from('contact_submissions').select('*').order('created_at', { ascending: false }).limit(50),
+    serviceClient.from('onboarding_submissions').select('*').order('created_at', { ascending: false }).limit(100),
   ])
 
   return (
@@ -34,6 +40,7 @@ export default async function AdminDashboardPage() {
         </form>
       </div>
       <div className="max-w-6xl mx-auto px-8 py-10 flex flex-col gap-12">
+        <SubmissionsList initialSubmissions={(onboardingSubmissions ?? []) as Submission[]} />
         <ServicesCRUD initialServices={services ?? []} />
         <ContactList contacts={contacts ?? []} />
       </div>
