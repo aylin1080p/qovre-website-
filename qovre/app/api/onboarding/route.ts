@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import { Resend } from 'resend'
 import { onboardingRateLimit } from '@/lib/rate-limit'
+import { csrfAllowed, validateFileBase64 } from '@/lib/security'
 
 const schema = z.object({
   category: z.enum(['visitekaart', 'portfolio', 'leadgen', 'saas']),
@@ -90,18 +91,6 @@ function formatEmail(d: Submission): string {
   return lines.join('\n')
 }
 
-function csrfAllowed(origin: string | null): boolean {
-  if (!origin) return true
-  const o = origin.replace(/\/$/, '')
-  const site = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.qovre.nl').trim().replace(/\/$/, '')
-  return (
-    o.startsWith('http://localhost') ||
-    o === site ||
-    o === site.replace('://www.', '://') ||
-    o === site.replace('://', '://www.')
-  )
-}
-
 export async function POST(req: NextRequest) {
   const ip = req.headers.get('x-forwarded-for') ?? req.headers.get('x-real-ip') ?? 'unknown'
   const { success } = await onboardingRateLimit.limit(ip)
@@ -121,6 +110,15 @@ export async function POST(req: NextRequest) {
   }
 
   const data = parsed.data
+
+  // File type guard: only PDF, JPEG, PNG allowed (magic-byte check)
+  if (data.fileBase64) {
+    const { valid } = validateFileBase64(data.fileBase64)
+    if (!valid) {
+      return NextResponse.json({ error: 'Unsupported file type. Only PDF, JPG, and PNG are allowed.' }, { status: 422 })
+    }
+  }
+
   const resend = new Resend(process.env.RESEND_API_KEY?.trim())
   const from = process.env.RESEND_FROM_EMAIL?.trim() ?? 'onboarding@resend.dev'
   const to = process.env.ADMIN_EMAIL?.trim() ?? 'contact@qovre.nl'

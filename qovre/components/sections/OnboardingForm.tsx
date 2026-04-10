@@ -408,12 +408,12 @@ function Step4({ state, onChange, locale, onFileChange, fileError }: {
               ? <span className="text-sm text-blue-400 font-medium">{state.fileName}</span>
               : <span className="text-sm text-neutral-500">
                   {isNL ? 'Klik om bestand te uploaden' : 'Click to upload file'}
-                  <span className="block text-xs text-neutral-600 mt-1">PNG, JPG, PDF, AI, SVG — max 10 MB</span>
+                  <span className="block text-xs text-neutral-600 mt-1">PNG, JPG, PDF — max 10 MB</span>
                 </span>
             }
           </button>
           {fileError && <p className="mt-1.5 text-xs text-red-400">{fileError}</p>}
-          <input ref={fileInputRef} type="file" accept=".png,.jpg,.jpeg,.pdf,.ai,.svg,.zip"
+          <input ref={fileInputRef} type="file" accept=".png,.jpg,.jpeg,.pdf"
             className="hidden"
             onChange={(e) => { const f = e.target.files?.[0]; if (f) onFileChange(f) }}
           />
@@ -462,7 +462,13 @@ export default function OnboardingForm({ locale }: { locale: string }) {
     setState((prev) => ({ ...prev, ...partial }))
   }
 
+  const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'application/pdf']
+
   function handleFileChange(file: File) {
+    if (!ALLOWED_TYPES.includes(file.type)) {
+      setFileError(isNL ? 'Ongeldig bestandstype. Alleen PDF, JPG en PNG zijn toegestaan.' : 'Invalid file type. Only PDF, JPG, and PNG are allowed.')
+      return
+    }
     if (file.size > 10 * 1024 * 1024) {
       setFileError(isNL ? 'Bestand te groot (max 10 MB).' : 'File too large (max 10 MB).')
       return

@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { Resend } from 'resend'
 import { createClient } from '@supabase/supabase-js'
 import { contactRateLimit } from '@/lib/rate-limit'
+import { csrfAllowed } from '@/lib/security'
 
 const contactSchema = z.object({
   name: z.string().min(1, 'Name is required').max(100),
@@ -24,22 +25,8 @@ export async function POST(req: NextRequest) {
     )
   }
 
-  // CSRF check
-  const origin = req.headers.get('origin')
-  const rawSiteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.qovre.nl').trim()
-  
-  // Normalize both by removing trailing slashes
-  const normalizedOrigin = origin ? origin.replace(/\/$/, '') : null;
-  const normalizedSite = rawSiteUrl.replace(/\/$/, '');
-  
-  const isAllowedOrigin = !normalizedOrigin || 
-    normalizedOrigin.startsWith('http://localhost') || 
-    normalizedOrigin === normalizedSite || 
-    normalizedOrigin === normalizedSite.replace('://www.', '://') ||
-    normalizedOrigin === normalizedSite.replace('://', '://www.')
-
-  if (!isAllowedOrigin) {
-    console.error(`CSRF Blocked. Origin: "${normalizedOrigin}", Expected: "${normalizedSite}"`)
+  // CSRF
+  if (!csrfAllowed(req.headers.get('origin'))) {
     return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
   }
 

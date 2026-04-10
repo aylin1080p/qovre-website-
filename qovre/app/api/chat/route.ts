@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import { createClient } from '@supabase/supabase-js'
 import { chatRateLimit } from '@/lib/rate-limit'
+import { csrfAllowed, maskPII, hasPromptInjection, sanitizeAiOutput } from '@/lib/security'
 
 const DAILY_LIMIT = 1500
 const WARN_THRESHOLD = 1200
@@ -41,9 +42,9 @@ const chatSchema = z.object({
   messages: z.array(
     z.object({
       role: z.enum(['user', 'model']),
-      parts: z.array(z.object({ text: z.string() })),
+      parts: z.array(z.object({ text: z.string().max(2000) })),
     })
-  ).max(20),
+  ).min(1).max(20),
 })
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -66,11 +67,16 @@ async function incrementUsage(supabase: SupabaseAny): Promise<number> {
 }
 
 export async function POST(req: NextRequest) {
-  // Rate limit
+  // 1. Rate limit
   const ip = req.headers.get('x-forwarded-for') ?? req.headers.get('x-real-ip') ?? 'unknown'
   const { success } = await chatRateLimit.limit(ip)
   if (!success) {
     return NextResponse.json({ error: 'Too many requests' }, { status: 429 })
+  }
+
+  // 2. CSRF
+  if (!csrfAllowed(req.headers.get('origin'))) {
+    return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
   }
 
   const supabase = createClient(
@@ -78,12 +84,13 @@ export async function POST(req: NextRequest) {
     process.env.SUPABASE_SERVICE_ROLE_KEY!
   )
 
-  // Check daily limit
+  // 3. Daily limit
   const currentCount = await getUsageCount(supabase)
   if (currentCount >= DAILY_LIMIT) {
     return NextResponse.json({ error: 'limit_reached' }, { status: 503 })
   }
 
+  // 4. Parse + schema validation
   let body: unknown
   try {
     body = await req.json()
@@ -98,14 +105,29 @@ export async function POST(req: NextRequest) {
 
   const { messages } = parsed.data
 
-  // Call Gemini
+  // 5. Prompt injection shield — check all user-role message parts
+  const userTexts = messages
+    .filter((m) => m.role === 'user')
+    .flatMap((m) => m.parts.map((p) => p.text))
+
+  if (userTexts.some(hasPromptInjection)) {
+    return NextResponse.json({ error: 'Invalid request' }, { status: 400 })
+  }
+
+  // 6. PII masking — redact emails/phones/cards before they reach the LLM
+  const safeMessages = messages.map((m) => ({
+    ...m,
+    parts: m.parts.map((p) => ({ text: maskPII(p.text) })),
+  }))
+
+  // 7. Call Gemini with sanitized messages
   const geminiRes = await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        contents: messages,
+        contents: safeMessages,
         systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
       }),
     }
@@ -120,12 +142,15 @@ export async function POST(req: NextRequest) {
   const geminiData = await geminiRes.json() as {
     candidates: Array<{ content: { parts: Array<{ text: string }> } }>
   }
-  const reply = geminiData.candidates?.[0]?.content?.parts?.[0]?.text ?? ''
 
-  // Increment usage counter
+  // 8. Sanitize AI output before sending to client
+  const rawReply = geminiData.candidates?.[0]?.content?.parts?.[0]?.text ?? ''
+  const reply = sanitizeAiOutput(rawReply)
+
+  // 9. Increment usage counter
   const newCount = await incrementUsage(supabase)
 
-  // Trigger warning email if threshold crossed
+  // 10. Trigger warning email if threshold crossed
   if (currentCount < WARN_THRESHOLD && newCount >= WARN_THRESHOLD) {
     await fetch(`${process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'}/api/chat-warning`, {
       method: 'POST',
