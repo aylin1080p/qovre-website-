@@ -1,4 +1,3 @@
-import { useLocale } from 'next-intl'
 import { generateMeta } from '@/lib/metadata'
 import { BRAND } from '@/data/seo'
 import Hero from '@/components/sections/Hero'
@@ -32,13 +31,17 @@ const websiteSchema = {
   inLanguage: ['nl', 'en'],
   potentialAction: {
     '@type': 'SearchAction',
-    target: `${BRAND.websiteUrl}/nl/veelgestelde-vragen`,
+    target: `${BRAND.websiteUrl}/nl/faq`,
     'query-input': 'required name=search_term_string',
   },
 }
 
-export default function HomePage() {
-  const locale = useLocale()
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
 
   return (
     <>

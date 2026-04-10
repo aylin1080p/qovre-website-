@@ -27,7 +27,28 @@ export function generateMeta({
 }: MetaConfig): Metadata {
   const canonical = `${BRAND.websiteUrl}${path}`;
   const ogImage = `${BRAND.websiteUrl}${image}`;
-  const fullTitle = `${title} | ${BRAND.brandName}`;
+  const normalizedTitle = title.trim();
+  const fullTitle = normalizedTitle.toLowerCase().includes(BRAND.brandName.toLowerCase())
+    ? normalizedTitle
+    : `${normalizedTitle} | ${BRAND.brandName}`;
+  const localeSuffix = path === "/" || path === "/en" || path === "/nl" ? "" : path.replace(/^\/(en|nl)/, "");
+  const normalizeUrl = (url: string) =>
+    url.startsWith("http") ? url : `${BRAND.websiteUrl}${url.startsWith("/") ? url : `/${url}`}`;
+  const englishUrl =
+    locale === "en"
+      ? canonical
+      : alternateLocale
+        ? normalizeUrl(alternateLocale)
+        : `${BRAND.websiteUrl}/en${localeSuffix}`;
+  const dutchUrl =
+    locale === "nl"
+      ? canonical
+      : alternateLocale
+        ? normalizeUrl(alternateLocale)
+        : `${BRAND.websiteUrl}/nl${localeSuffix}`;
+  const verificationToken =
+    process.env.GOOGLE_SITE_VERIFICATION ||
+    process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
   return {
     title: fullTitle,
@@ -36,6 +57,7 @@ export function generateMeta({
     authors: [{ name: BRAND.brandName, url: BRAND.websiteUrl }],
     creator: BRAND.brandName,
     publisher: BRAND.brandName,
+    metadataBase: new URL(BRAND.websiteUrl),
     robots: noIndex
       ? { index: false, follow: false }
       : {
@@ -51,12 +73,11 @@ export function generateMeta({
         },
     alternates: {
       canonical,
-      languages: alternateLocale
-        ? {
-            "en-NL": locale === "en" ? canonical : alternateLocale,
-            "nl-NL": locale === "nl" ? canonical : alternateLocale,
-          }
-        : undefined,
+      languages: {
+        "en": englishUrl,
+        "nl": dutchUrl,
+        "x-default": dutchUrl,
+      },
     },
     openGraph: {
       title: fullTitle,
@@ -80,17 +101,16 @@ export function generateMeta({
       description,
       images: [ogImage],
     },
+    verification: verificationToken ? { google: verificationToken } : undefined,
     other: {
-      // GEO meta tags — helps regional engines and AI crawlers
       "geo.region": "NL",
       "geo.country": "Netherlands",
+      "geo.placename": BRAND.location.city,
       "language": locale === "nl" ? "Dutch" : "English",
-      // Dublin Core for LLM crawlers
       "DC.title": fullTitle,
       "DC.description": description,
       "DC.creator": BRAND.brandName,
       "DC.language": locale,
-      "DC.coverage": "Netherlands",
     },
   };
 }
@@ -103,6 +123,6 @@ export function getHreflangTags(enUrl: string, nlUrl: string) {
   return [
     { rel: "alternate", hrefLang: "en-nl", href: `${BRAND.websiteUrl}${enUrl}` },
     { rel: "alternate", hrefLang: "nl-nl", href: `${BRAND.websiteUrl}${nlUrl}` },
-    { rel: "alternate", hrefLang: "x-default", href: `${BRAND.websiteUrl}${enUrl}` },
+    { rel: "alternate", hrefLang: "x-default", href: `${BRAND.websiteUrl}${nlUrl}` },
   ];
 }

@@ -18,11 +18,11 @@ export default function Footer() {
           <div className="flex flex-col gap-2">
             <span className="text-white font-medium mb-1">Nederlands</span>
             <Link href="/nl/diensten" className="hover:text-white transition-colors">Diensten</Link>
-            <Link href="/nl/werkwijze" className="hover:text-white transition-colors">Werkwijze</Link>
+            <Link href="/nl/process" className="hover:text-white transition-colors">Werkwijze</Link>
             <Link href="/nl/over-ons" className="hover:text-white transition-colors">Over ons</Link>
             <Link href="/nl/contact" className="hover:text-white transition-colors">Contact</Link>
             <Link href="/nl/sectoren" className="hover:text-white transition-colors">Sectoren</Link>
-            <Link href="/nl/veelgestelde-vragen" className="hover:text-white transition-colors">Veelgestelde vragen</Link>
+            <Link href="/nl/faq" className="hover:text-white transition-colors">Veelgestelde vragen</Link>
             <Link href="/nl/blog" className="hover:text-white transition-colors">Blog</Link>
           </div>
 
@@ -51,7 +51,7 @@ export default function Footer() {
         {/* Cities */}
         <div className="flex flex-wrap gap-x-3 gap-y-1.5 text-xs text-neutral-600">
           {CITIES.map((city) => (
-            <Link key={city.slug} href={`/nl/software-ontwikkeling-${city.slug}`} className="hover:text-neutral-400 transition-colors">
+            <Link key={city.slug} href={`/nl/software-ontwikkeling/${city.slug}`} className="hover:text-neutral-400 transition-colors">
               {city.name}
             </Link>
           ))}

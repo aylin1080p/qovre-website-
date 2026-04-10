@@ -76,16 +76,16 @@ export default async function ContactPage({
                   ? 'Uw gegevens worden verwerkt conform ons '
                   : 'Your data is processed in accordance with our '}
                 <a
-                  href="/legal/privacy-policy.pdf"
+                  href="/legal/ai_usage_policy.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-neutral-500 hover:text-neutral-300 underline underline-offset-2 transition-colors"
                 >
-                  {locale === 'nl' ? 'privacybeleid' : 'privacy policy'}
+                  {locale === 'nl' ? 'AI-gebruik beleid' : 'AI usage policy'}
                 </a>
                 {locale === 'nl' ? ' en ' : ' and '}
                 <a
-                  href="/legal/data-processing-agreement.pdf"
+                  href="/legal/data_processing_agreement.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-neutral-500 hover:text-neutral-300 underline underline-offset-2 transition-colors"

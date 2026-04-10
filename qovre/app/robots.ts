@@ -51,7 +51,9 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: `${BRAND.websiteUrl}/sitemap.xml`,
+    sitemap: [
+      `${BRAND.websiteUrl}/sitemap.xml`,
+    ],
     host: BRAND.websiteUrl,
   };
 }

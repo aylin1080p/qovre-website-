@@ -73,7 +73,7 @@ export default function FAQ({ locale }: { locale: string }) {
           className="mt-10 text-center"
         >
           <Link
-            href={locale === 'nl' ? '/nl/veelgestelde-vragen' : '/en/faq'}
+            href={`/${locale}/faq`}
             className="inline-flex items-center gap-2 text-sm font-medium text-neutral-400 hover:text-white border border-neutral-800 hover:border-neutral-700 px-5 py-2.5 rounded-full transition-all"
           >
             {locale === 'nl' ? 'Bekijk alle vragen' : 'View all questions'}

@@ -27,6 +27,7 @@ test.setTimeout(60_000)
 
 // ─── 1. Root redirect ────────────────────────────────────────────────────────
 test('root / redirects to /nl', async ({ page }) => {
+  await page.context().clearCookies()
   await page.goto('/', { waitUntil: 'domcontentloaded' })
   await expect(page).toHaveURL(/\/nl/, { timeout: 15_000 })
 })
@@ -68,12 +69,12 @@ test('contact page renders form fields', async ({ page }) => {
   // Message textarea
   await expect(page.locator('textarea')).toBeVisible()
   // Submit button
-  await expect(page.getByRole('button', { name: /verstuur|send/i })).toBeVisible()
+  await expect(page.getByRole('button', { name: /versturen|send/i })).toBeVisible()
 })
 
 test('contact form stays on page after empty submit attempt', async ({ page }) => {
   await page.goto('/nl/contact', { waitUntil: 'domcontentloaded' })
-  const submitBtn = page.getByRole('button', { name: /verstuur|send/i })
+  const submitBtn = page.getByRole('button', { name: /versturen|send/i })
   await submitBtn.click()
   // HTML5 validation or custom error — should not navigate away
   await expect(page).toHaveURL(/\/nl\/contact/)
@@ -155,12 +156,12 @@ test('FAQ EN page renders', async ({ page }) => {
 
 // ─── 10. City landing ────────────────────────────────────────────────────────
 test('city landing NL renders (amsterdam)', async ({ page }) => {
-  await page.goto('/nl/software-ontwikkeling-amsterdam', { waitUntil: 'domcontentloaded' })
+  await page.goto('/nl/software-ontwikkeling/amsterdam', { waitUntil: 'domcontentloaded' })
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
 })
 
 test('city landing EN renders (amsterdam)', async ({ page }) => {
-  await page.goto('/en/software-development-amsterdam', { waitUntil: 'domcontentloaded' })
+  await page.goto('/en/software-development/amsterdam', { waitUntil: 'domcontentloaded' })
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
 })
 

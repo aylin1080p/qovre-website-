@@ -1,11 +1,15 @@
 import ServiceDetail from '@/components/sections/ServiceDetail'
 import { SERVICES, BRAND } from '@/data/seo'
 import { generateMeta } from '@/lib/metadata'
+import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
-  return SERVICES.map((service) => ({
-    service: service.slug,
-  }))
+  return ['nl', 'en'].flatMap((locale) =>
+    SERVICES.map((service) => ({
+      locale,
+      service: service.slug,
+    })),
+  )
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; service: string }> }) {
@@ -25,6 +29,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 export default async function ServicePage({ params }: { params: Promise<{ locale: string; service: string }> }) {
   const { locale, service: slug } = await params
   const service = SERVICES.find((s) => s.slug === slug)
+  if (!service) {
+    notFound()
+  }
 
   const isNL = locale === 'nl'
 
@@ -66,7 +73,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
       {breadcrumbSchema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       )}
-      <ServiceDetail slug={slug} locale={locale} />
+      <ServiceDetail service={service} locale={locale} />
     </>
   )
 }

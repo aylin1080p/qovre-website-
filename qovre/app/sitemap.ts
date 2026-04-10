@@ -22,11 +22,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Dutch core
     { url: `${BRAND.websiteUrl}/nl`, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
     { url: `${BRAND.websiteUrl}/nl/diensten`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BRAND.websiteUrl}/nl/werkwijze`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BRAND.websiteUrl}/nl/process`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BRAND.websiteUrl}/nl/sectoren`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
     { url: `${BRAND.websiteUrl}/nl/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.9 },
     { url: `${BRAND.websiteUrl}/nl/over-ons`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${BRAND.websiteUrl}/nl/veelgestelde-vragen`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BRAND.websiteUrl}/nl/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BRAND.websiteUrl}/nl/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
   ];
 
@@ -47,17 +47,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]);
 
   // City landing pages — SEO geo targeting
-  // EN: /en/custom-software-amsterdam
-  // NL: /nl/maatwerk-software-amsterdam
   const cityPages: MetadataRoute.Sitemap = CITIES.flatMap((city) => [
     {
-      url: `${BRAND.websiteUrl}/en/software-development-${city.slug}`,
+      url: `${BRAND.websiteUrl}/en/software-development/${city.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.75,
     },
     {
-      url: `${BRAND.websiteUrl}/nl/software-ontwikkeling-${city.slug}`,
+      url: `${BRAND.websiteUrl}/nl/software-ontwikkeling/${city.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.75,

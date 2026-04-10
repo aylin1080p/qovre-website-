@@ -66,6 +66,12 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
+        <link
+          rel="preload"
+          href="/hero-lcp.png"
+          as="image"
+          type="image/png"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

@@ -1,23 +1,16 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { TARGET_CITIES } from '@/data/seo'
+import { type CityLandingInfo } from '@/data/seo'
 import { fadeUp, staggerContainer, viewportOnce } from '@/lib/animations'
 import ContactForm from '@/components/sections/ContactForm'
-import { notFound } from 'next/navigation'
 
 interface CityLandingProps {
-  citySlug: string
+  cityData: CityLandingInfo
   locale: string
 }
 
-export default function CityLanding({ citySlug, locale }: CityLandingProps) {
-  const cityData = TARGET_CITIES.find((c) => c.slug === citySlug)
-
-  if (!cityData) {
-    notFound()
-  }
-
+export default function CityLanding({ cityData, locale }: CityLandingProps) {
   const title = locale === 'nl' 
     ? `Software ontwikkeling in ${cityData.city}` 
     : `Software development in ${cityData.city}`

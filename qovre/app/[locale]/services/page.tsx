@@ -1,22 +1,27 @@
 import Link from 'next/link'
+import { permanentRedirect } from 'next/navigation'
 import { SERVICES, BRAND } from '@/data/seo'
 import { generateMeta } from '@/lib/metadata'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
+  if (locale === 'nl') {
+    permanentRedirect('/nl/diensten')
+  }
   return generateMeta({
-    title: locale === 'nl' ? 'Diensten' : 'Services',
-    description: locale === 'nl'
-      ? 'Bekijk alle digitale diensten van Qovre: websites, ecommerce, SaaS, AI en SEO.'
-      : 'Explore all Qovre services: websites, ecommerce, SaaS, AI automation, and SEO.',
-    path: `/${locale}/services`,
-    locale: locale as 'nl' | 'en',
-    alternateLocale: `${BRAND.websiteUrl}/${locale === 'nl' ? 'en/services' : 'nl/diensten'}`,
+    title: 'Services',
+    description: 'Explore all Qovre services: websites, ecommerce, SaaS, AI automation, and SEO.',
+    path: '/en/services',
+    locale: 'en',
+    alternateLocale: `${BRAND.websiteUrl}/nl/diensten`,
   })
 }
 
 export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
+  if (locale === 'nl') {
+    permanentRedirect('/nl/diensten')
+  }
 
   return (
     <div className="relative min-h-screen pt-24 pb-24 px-4 bg-[#060608]">

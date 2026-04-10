@@ -3,13 +3,12 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { SERVICES, FAQ } from '@/data/seo'
+import { FAQ, type ServiceInfo } from '@/data/seo'
 import { fadeUp, staggerContainer, viewportOnce, scaleUp, faqAnswer } from '@/lib/animations'
 import ContactForm from '@/components/sections/ContactForm'
-import { notFound } from 'next/navigation'
 
 interface ServiceDetailProps {
-  slug: string
+  service: ServiceInfo
   locale: string
 }
 
@@ -28,11 +27,8 @@ function getCTAHeadline(category: string, locale: string): string {
   return locale === 'nl' ? entry.nl : entry.en
 }
 
-export default function ServiceDetail({ slug, locale }: ServiceDetailProps) {
-  const service = SERVICES.find((s) => s.slug === slug)
+export default function ServiceDetail({ service, locale }: ServiceDetailProps) {
   const [openFaq, setOpenFaq] = useState<string | null>(null)
-
-  if (!service) notFound()
 
   const title = locale === 'nl' ? service.titleNL : service.titleEN
   const description = locale === 'nl' ? service.fullDescriptionNL : service.fullDescriptionEN
@@ -158,7 +154,7 @@ export default function ServiceDetail({ slug, locale }: ServiceDetailProps) {
             </div>
             <div className="mt-4 text-right">
               <Link
-                href={locale === 'nl' ? '/nl/veelgestelde-vragen' : '/en/faq'}
+                href={`/${locale}/faq`}
                 className="text-xs text-neutral-500 hover:text-neutral-300 transition-colors"
               >
                 {locale === 'nl' ? 'Alle vragen bekijken →' : 'View all questions →'}

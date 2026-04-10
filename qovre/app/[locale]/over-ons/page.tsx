@@ -1,9 +1,13 @@
 import Link from 'next/link'
+import { permanentRedirect } from 'next/navigation'
 import { BRAND } from '@/data/seo'
 import { generateMeta } from '@/lib/metadata'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
+  if (locale === 'en') {
+    permanentRedirect('/en/about')
+  }
   return generateMeta({
     title: 'Over ons',
     description: 'Qovre is een digitaal bureau in Den Haag dat websites, SaaS en AI-systemen bouwt voor bedrijven in Nederland.',
@@ -13,7 +17,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   })
 }
 
-export default function OverOnsPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function OverOnsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  if (locale === 'en') {
+    permanentRedirect('/en/about')
+  }
   return (
     <div className="relative min-h-screen pt-24 pb-24 px-4 bg-[#060608]">
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">

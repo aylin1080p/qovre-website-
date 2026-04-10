@@ -54,6 +54,9 @@ export type BrandInfo = {
     nl: string[];
     en: string[];
   };
+  criticalCss?: {
+    [key: string]: string; // URL path -> CSS string or Reference
+  };
 };
 
 export type ServiceInfo = {

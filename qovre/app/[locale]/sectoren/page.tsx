@@ -1,8 +1,13 @@
 import Link from 'next/link'
+import { permanentRedirect } from 'next/navigation'
 import { generateMeta } from '@/lib/metadata'
 import { BRAND } from '@/data/seo'
 
-export async function generateMetadata() {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  if (locale === 'en') {
+    permanentRedirect('/en/industries')
+  }
   return generateMeta({
     title: 'Sectoren',
     description: 'Qovre bouwt websites, webshops, SaaS-platformen en AI-oplossingen voor bedrijven in zakelijke dienstverlening, retail, zorg, technologie en meer.',
@@ -60,7 +65,11 @@ const sectoren = [
   },
 ]
 
-export default function SectorenPage() {
+export default async function SectorenPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  if (locale === 'en') {
+    permanentRedirect('/en/industries')
+  }
   return (
     <div className="relative min-h-screen pt-24 pb-24 px-4 bg-[#060608]">
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">

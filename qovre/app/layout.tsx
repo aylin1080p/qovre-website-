@@ -4,10 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
-  title: {
-    default: "Qovre",
-    template: "%s | Qovre",
-  },
+  title: "Qovre",
   description: "Websites, webshops, SaaS en AI-oplossingen voor bedrijven in Nederland. Gebaseerd in Den Haag, actief door heel Nederland.",
   metadataBase: new URL("https://www.qovre.nl"),
 };

@@ -1,13 +1,17 @@
 import Link from 'next/link'
+import { permanentRedirect } from 'next/navigation'
 import { SERVICES, BRAND } from '@/data/seo'
 import { generateMeta } from '@/lib/metadata'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
+  if (locale === 'en') {
+    permanentRedirect('/en/services')
+  }
   return generateMeta({
     title: 'Diensten',
     description: 'Bekijk alle digitale diensten van Qovre: websites, webshops, SaaS, AI-automatisering en technische vindbaarheid.',
-    path: `/${locale}/diensten`,
+    path: '/nl/diensten',
     locale: 'nl',
     alternateLocale: `${BRAND.websiteUrl}/en/services`,
   })
@@ -15,6 +19,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function DienstenPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
+  if (locale === 'en') {
+    permanentRedirect('/en/services')
+  }
 
   return (
     <div className="relative min-h-screen pt-24 pb-24 px-4 bg-[#060608]">

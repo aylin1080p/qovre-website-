@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { fadeUp, staggerContainerSlow, lineReveal, viewportOnce } from '@/lib/animations'
@@ -13,7 +14,18 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[-5%] left-[10%] w-[50%] h-[50%] rounded-full bg-blue-600/8 blur-[140px]" />
         <div className="absolute bottom-[0%] right-[5%] w-[45%] h-[45%] rounded-full bg-indigo-600/6 blur-[140px]" />
-        <div className="absolute top-[40%] left-[40%] w-[30%] h-[30%] rounded-full bg-blue-400/4 blur-[100px]" />
+        
+        {/* LCP Image Optimized */}
+        <div className="absolute top-[20%] right-[-10%] md:right-[5%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] opacity-40 mix-blend-lighten">
+          <Image 
+            src="/hero-lcp.png"
+            alt="Premium custom software solutions"
+            fill
+            className="object-contain"
+            priority={true} // loading="eager"
+            fetchPriority="high"
+          />
+        </div>
       </div>
 
       <motion.div
