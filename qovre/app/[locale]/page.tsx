@@ -6,6 +6,7 @@ import TrustBar from '@/components/sections/TrustBar'
 import Process from '@/components/sections/Process'
 import FAQ from '@/components/sections/FAQ'
 import ContactSection from '@/components/sections/ContactSection'
+import ProofStrip from '@/components/sections/ProofStrip'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -53,6 +54,7 @@ export default async function HomePage({
         <Hero />
         <ServicesGrid locale={locale} />
         <TrustBar locale={locale} />
+        <ProofStrip locale={locale} />
         <Process />
         <FAQ locale={locale} />
         <ContactSection locale={locale} />
