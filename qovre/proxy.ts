@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server'
 import createIntlMiddleware from 'next-intl/middleware'
 import { createServerClient } from '@supabase/ssr'
 
+// Hard-coded admin allowlist — these emails always have dashboard access
+const ADMIN_EMAILS = ['4ylingunes@gmail.com']
+
 const intlMiddleware = createIntlMiddleware({
   locales: ['nl', 'en'],
   defaultLocale: 'nl',
@@ -58,7 +61,7 @@ export async function proxy(req: NextRequest) {
     )
 
     const { data: { user } } = await supabase.auth.getUser()
-    if (!user) {
+    if (!user || !ADMIN_EMAILS.includes(user.email ?? '')) {
       return NextResponse.redirect(new URL('/admin', req.url))
     }
 

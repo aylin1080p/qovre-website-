@@ -7,6 +7,9 @@ import Process from '@/components/sections/Process'
 import FAQ from '@/components/sections/FAQ'
 import ContactSection from '@/components/sections/ContactSection'
 import ProofStrip from '@/components/sections/ProofStrip'
+import SelectedWorks from '@/components/sections/SelectedWorks'
+import Testimonials from '@/components/sections/Testimonials'
+import TechStack from '@/components/sections/TechStack'
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
@@ -52,8 +55,11 @@ export default async function HomePage({
       />
       <div className="flex flex-col gap-0 overflow-x-hidden">
         <Hero />
+        <TechStack />
         <ServicesGrid locale={locale} />
         <TrustBar locale={locale} />
+        <SelectedWorks />
+        <Testimonials locale={locale} />
         <ProofStrip locale={locale} />
         <Process />
         <FAQ locale={locale} />

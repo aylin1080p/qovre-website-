@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import ChatWidget from '@/components/ui/ChatWidget'
+import CookieConsent from '@/components/ui/CookieConsent'
 import { BRAND, SERVICES } from '@/data/seo'
 
 const locales = ['nl', 'en']
@@ -83,6 +84,7 @@ export default async function LocaleLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <ChatWidget />
+          <CookieConsent />
         </NextIntlClientProvider>
       </body>
     </html>

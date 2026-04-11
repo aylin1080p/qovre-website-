@@ -39,12 +39,12 @@ export default function Footer() {
 
           <div className="flex flex-col gap-2">
             <span className="text-white font-medium mb-1">Legal</span>
+            <Link href="/nl/privacy-policy" className="hover:text-white transition-colors">Privacybeleid</Link>
+            <Link href="/en/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/nl/terms-conditions" className="hover:text-white transition-colors">Algemene Voorwaarden</Link>
+            <Link href="/en/terms-conditions" className="hover:text-white transition-colors">Terms &amp; Conditions</Link>
             <a href="/legal/service_level_agreement.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">SLA</a>
             <a href="/legal/data_processing_agreement.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Data Processing</a>
-            <a href="/legal/refund_policy.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Refund Policy</a>
-            <a href="/legal/ai_usage_policy.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">AI Usage Policy</a>
-            <a href="/legal/hosting_liability.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Hosting Liability</a>
-            <a href="/legal/client_contract_template.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Client Contract</a>
           </div>
         </div>
 
