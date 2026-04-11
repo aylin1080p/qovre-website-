@@ -69,6 +69,6 @@ export async function proxy(req: NextRequest) {
   return intlMiddleware(req)
 }
 
-export const proxyConfig = {
+export const config = {
   matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
 }
