@@ -36,7 +36,13 @@ export default function AdminLoginForm() {
       const { error: authError } = await supabase.auth.signInWithPassword({ email, password })
 
       if (authError) {
-        setError('Invalid credentials')
+        if (authError.message.toLowerCase().includes('invalid') || authError.message.toLowerCase().includes('credentials')) {
+          setError('E-mail of wachtwoord is onjuist. Controleer uw gegevens.')
+        } else if (authError.message.toLowerCase().includes('email not confirmed')) {
+          setError('E-mailadres is nog niet bevestigd. Controleer uw inbox.')
+        } else {
+          setError(`Inloggen mislukt: ${authError.message}`)
+        }
         return
       }
 
