@@ -29,22 +29,22 @@
 ## 📸 Screenshots
 
 ### Hero — Landing Page
-![Hero section](./Ekran_Resmi_2026-04-23_14_04_51.png)
+![Hero section](./qovre/public/screenshots/readme/homepage-nl.png)
 
 ### Contact Page
-![Contact page](Ekran_Resmi_2026-04-23_14_06_47.png)
+![Contact page](./qovre/public/screenshots/readme/contact-page.png)
 
 ### Project Intake — Step 1: What to build
-![Project intake step 1](Ekran_Resmi_2026-04-23_14_05_07.png)
+![Project intake step 1](./qovre/public/screenshots/readme/project-inquiry-step-1.png)
 
 ### Project Intake — Step 2: Platform type & integrations
-![Project intake step 2](Ekran_Resmi_2026-04-23_14_05_13.png)
+![Project intake step 2](./qovre/public/screenshots/readme/project-inquiry-step-2.png)
 
 ### Project Intake — Step 3: Maintenance package & SLA
-![Project intake step 3](Ekran_Resmi_2026-04-23_14_05_25.png)
+![Project intake step 3](./qovre/public/screenshots/readme/project-inquiry-step-3.png)
 
 ### Project Intake — Step 4: Final details & submit
-![Project intake step 4](Ekran_Resmi_2026-04-23_14_05_38.png)
+![Project intake step 4](./qovre/public/screenshots/readme/project-inquiry-step-4.png)
 
 ---
 
