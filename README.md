@@ -29,7 +29,7 @@
 ## 📸 Screenshots
 
 ### Hero — Landing Page
-![Hero section](Ekran_Resmi_2026-04-23_14_04_51.png)
+![Hero section](./Ekran_Resmi_2026-04-23_14_04_51.png)
 
 ### Contact Page
 ![Contact page](Ekran_Resmi_2026-04-23_14_06_47.png)
