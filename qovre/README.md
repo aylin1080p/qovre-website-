@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Qovre Website
 
-## Getting Started
+Qovre is a multilingual B2B website for a Dutch digital studio focused on websites, ecommerce, SaaS, AI automation, and technical SEO/GEO services. The project is built with Next.js App Router, localized with `next-intl`, and deployed on Vercel at [qovre.nl](https://qovre.nl).
 
-First, run the development server:
+## Highlights
+
+- Multilingual marketing site with Dutch and English routes
+- Service, process, industry, blog, and contact pages
+- Guided multi-step project inquiry flow
+- Admin area and API routes for lead handling
+- Production deployment on Vercel with custom domains
+
+## Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- next-intl
+- Supabase
+- Resend
+- Upstash Redis
+- Vercel Analytics and Speed Insights
+
+## Local Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+For a production build:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## Screens
 
-To learn more about Next.js, take a look at the following resources:
+### Homepage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Dutch landing page hero and primary navigation.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+![Homepage screenshot](./public/screenshots/readme/homepage-nl.png)
 
-## Deploy on Vercel
+### Project Inquiry - Step 1
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Service type selection in the intake flow.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![Project inquiry step 1](./public/screenshots/readme/project-inquiry-step-1.png)
+
+### Project Inquiry - Step 2
+
+Platform, page count, integrations, and CMS preferences.
+
+![Project inquiry step 2](./public/screenshots/readme/project-inquiry-step-2.png)
+
+### Project Inquiry - Step 3
+
+Maintenance package and hosting preferences.
+
+![Project inquiry step 3](./public/screenshots/readme/project-inquiry-step-3.png)
+
+### Project Inquiry - Step 4
+
+Contact details and asset upload for the final request step.
+
+![Project inquiry step 4](./public/screenshots/readme/project-inquiry-step-4.png)
+
+### Contact Page
+
+Direct contact form and business contact details.
+
+![Contact page screenshot](./public/screenshots/readme/contact-page.png)
+
+## Project Structure
+
+```text
+app/                  App Router pages, layouts, API routes
+components/           UI and section components
+data/                 SEO, blog, and case-study content
+lib/                  Metadata, security, Supabase, utilities
+messages/             Translation dictionaries
+public/               Static assets and README screenshots
+supabase/             SQL migrations and setup notes
+tests/                End-to-end tests and reports
+```
+
+## Deployment
+
+Production runs on Vercel and is available at:
+
+- [qovre.nl](https://qovre.nl)
+- [www.qovre.nl](https://www.qovre.nl)
+
+## Notes
+
+The README screenshots are stored in `public/screenshots/readme/` so they render both locally and on GitHub.
